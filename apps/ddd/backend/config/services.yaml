@@ -1,0 +1,22 @@
+
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  # Configure
+  MN\Apps\Ddd\Backend\Controller\:
+    resource: '../src/Controller'
+    tags: ['controller.service_arguments']
+
+  # Wire
+  MN\Shared\:
+    resource: '../../../../src/Shared'
+
+  MN\Ddd\:
+    resource: '../../../../src/Ddd'
+
+  # -- TAGGING --
+  MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
