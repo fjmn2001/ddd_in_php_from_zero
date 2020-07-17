@@ -6,8 +6,8 @@ services:
     autoconfigure: true
     autowire: true
 
-  MN\Tests\:
-    resource: '../../../../tests/src'
+  #MN\Tests\:
+  #  resource: '../../../../tests/src'
 
   # Instance selector
   #CodelyTv\Shared\Domain\RandomNumberGenerator: '@CodelyTv\Tests\Shared\Infrastructure\ConstantRandomNumberGenerator'
