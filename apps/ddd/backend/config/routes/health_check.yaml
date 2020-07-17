@@ -1,4 +1,4 @@
 health-check_get:
   path: /health-check
-  controller: MN\Apps\Mooc\Ddd\Controller\HealthCheck\HealthCheckGetController
+  controller: MN\Apps\Ddd\Backend\Controller\HealthCheck\HealthCheckGetController
   methods:  [GET]
