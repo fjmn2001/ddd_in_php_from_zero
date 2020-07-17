@@ -9,5 +9,21 @@
             "email": "fjmn2001@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^7.3.0",
+        "symfony/framework-bundle": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "MN\\Apps\\Ddd\\Backend\\": "apps/ddd/backend/src",
+            "MN\\Apps\\Ddd\\Frontend\\": "apps/ddd/frontend/src",
+
+            "MN\\": ["src"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MN\\Tests\\": ["tests/src"]
+        }
+    }
 }
