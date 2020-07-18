@@ -1,0 +1,2 @@
+imports:
+  - tests/apps/ddd/backend/ddd_backend.yml
