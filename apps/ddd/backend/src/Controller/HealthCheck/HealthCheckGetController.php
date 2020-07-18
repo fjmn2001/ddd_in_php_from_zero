@@ -22,7 +22,7 @@ final class HealthCheckGetController
     public function __invoke(): JsonResponse
     {
         return new JsonResponse([
-            'status' => 'ok',
+            'ddd-backend' => 'ok',
             'number' => $this->generator->generate()
         ]);
     }
