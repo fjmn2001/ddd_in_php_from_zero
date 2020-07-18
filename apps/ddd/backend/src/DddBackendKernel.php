@@ -17,7 +17,7 @@ use Symfony\Component\Routing\RouteCollectionBuilder;
 final class DddBackendKernel extends Kernel
 {
     use MicroKernelTrait;
-    private const CONFIG_EXTS = '.{xml,yaml}';
+    private const CONFIG_EXTS = '.{xml,yml}';
 
     public function registerBundles(): iterable
     {
