@@ -7,7 +7,7 @@ declare(strict_types=1);
 namespace MN\Shared\Infrastructure;
 
 
-final class RandomNumberGenerator
+final class PhpRandomNumberGenerator implements \MN\Shared\Domain\RandomNumberGenerator
 {
     public function generate(): int
     {
