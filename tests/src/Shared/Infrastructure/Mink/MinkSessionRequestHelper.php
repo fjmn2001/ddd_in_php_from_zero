@@ -1,6 +1,7 @@
 <?php
 
 
+
 declare(strict_types=1);
 
 
@@ -12,6 +13,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 final class MinkSessionRequestHelper
 {
+
     /** @var MinkHelper */
     private $sessionHelper;
 
