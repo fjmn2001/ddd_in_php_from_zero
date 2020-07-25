@@ -10,5 +10,6 @@ services:
     resource: '../../../../tests/src'
 
   # Instance selector
-  MN\Shared\Domain\RandomNumberGenerator: '@MN\Tests\Shared\Infrastructure\ConstantNumberGenerator'
+  MN\Shared\Domain\RandomNumberGenerator: '@MN\Tests\Shared\Infrastructure\PhpRandomNumberGenerator'
+#  MN\Shared\Domain\RandomNumberGenerator: '@MN\Shared\Infrastructure\PhpRandomNumberGenerator'
 #  CodelyTv\Shared\Domain\Bus\Event\EventBus: '@CodelyTv\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus'

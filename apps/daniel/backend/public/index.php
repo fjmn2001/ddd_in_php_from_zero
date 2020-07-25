@@ -1,5 +1,6 @@
 <?php
 
+
 use MN\Apps\Daniel\Backend\DanielBackendKernel;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;

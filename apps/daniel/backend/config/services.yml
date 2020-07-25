@@ -15,8 +15,8 @@ services:
   MN\Shared\:
     resource: '../../../../src/Shared'
 
-  MN\Francisco\:
-    resource: '../../../../src/daniel'
+  MN\Daniel\:
+    resource: '../../../../src/Daniel'
 
   # -- TAGGING --
   MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
