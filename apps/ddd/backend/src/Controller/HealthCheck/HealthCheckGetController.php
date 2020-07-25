@@ -12,6 +12,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 final class HealthCheckGetController
 {
+    /**
+     * @var RandomNumberGenerator
+     */
     private $generator;
 
     public function __construct(RandomNumberGenerator $generator)
@@ -19,10 +22,11 @@ final class HealthCheckGetController
         $this->generator = $generator;
     }
 
-    public function __invoke(): JsonResponse
+
+    public function __invoke() : JsonResponse
     {
         return new JsonResponse([
-            'ddd-backend' => 'ok',
+            'status' => 'ok',
             'number' => $this->generator->generate()
         ]);
     }
