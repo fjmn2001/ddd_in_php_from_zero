@@ -15,3 +15,8 @@ francisco_backend:
       paths: [ tests/apps/francisco/backend/features/health_check ]
       contexts:
         - MN\Tests\Shared\Infrastructure\Behat\ApiContext
+
+    courses:
+      paths: [ tests/apps/francisco/backend/features/courses ]
+      contexts:
+        - MN\Tests\Shared\Infrastructure\Behat\ApiContext
