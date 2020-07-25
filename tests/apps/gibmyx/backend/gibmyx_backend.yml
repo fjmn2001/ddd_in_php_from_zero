@@ -15,3 +15,8 @@ gibmyx_backend:
       paths: [ tests/apps/gibmyx/backend/features/health_check ]
       contexts:
         - MN\Tests\Shared\Infrastructure\Behat\ApiContext
+
+    courses:
+      paths: [ tests/apps/gibmyx/backend/features/courses ]
+      contexts:
+        - MN\Tests\Shared\Infrastructure\Behat\ApiContext

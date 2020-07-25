@@ -1,0 +1,4 @@
+courses_put:
+  path: /courses/{id}
+  controller: MN\Apps\Gibmyx\Backend\Controller\Courses\CoursesPutController
+  methods:  [PUT]
