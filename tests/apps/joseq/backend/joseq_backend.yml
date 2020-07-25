@@ -2,7 +2,7 @@ joseq_backend:
   extensions:
     FriendsOfBehat\SymfonyExtension:
       kernel:
-        class: MN\Apps\joseq\Backend\JoseQBackendKernel
+        class: MN\Apps\JoseQ\Backend\JoseQBackendKernel
       bootstrap: apps/bootstrap.php
     Behat\MinkExtension:
       sessions:

@@ -1,5 +1,6 @@
 <?php
 
+
 use MN\Apps\JoseQ\Backend\JoseQBackendKernel;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\HttpFoundation\Request;
