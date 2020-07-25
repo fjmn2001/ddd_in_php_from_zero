@@ -24,7 +24,7 @@ final class HealthCheckGetController
     {
         return new JsonResponse([
             'ddd-backend' => 'ok',
-            'number' => $this->generator->generate()
+            'rand' => $this->generator->generate()
         ]);
     }
 }
