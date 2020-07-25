@@ -7,7 +7,7 @@ declare(strict_types=1);
 namespace MN\Apps\Gibmyx\Backend\Controller\HealthCheck;
 
 
-use MN\Gibmyx\Shared\Domain\RandomNumberGenerator;
+use MN\Shared\Domain\RandomNumberGenerator;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 final class HealthCheckGetController
@@ -23,7 +23,7 @@ final class HealthCheckGetController
     {
         return new JsonResponse([
             'gibmyx-backend' => 'ok',
-            'number' => $this->generator->generate()
+            'rand' => $this->generator->generate()
         ]);
     }
 }

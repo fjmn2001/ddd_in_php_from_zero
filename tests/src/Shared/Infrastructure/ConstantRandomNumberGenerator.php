@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace MN\Tests\Shared\Infrastructure;
 
-use MN\Gibmyx\Shared\Domain\RandomNumberGenerator;
+
+use MN\Shared\Domain\RandomNumberGenerator;
 
 final class ConstantRandomNumberGenerator implements RandomNumberGenerator
 {

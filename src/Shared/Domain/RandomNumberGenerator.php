@@ -1,8 +1,7 @@
 <?php
 
-declare(strict_types=1);
 
-namespace MN\Gibmyx\Shared\Domain;
+namespace MN\Shared\Domain;
 
 
 interface RandomNumberGenerator
