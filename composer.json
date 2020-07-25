@@ -29,6 +29,9 @@
             "MN\\Apps\\Ddd\\Backend\\": "apps/ddd/backend/src",
             "MN\\Apps\\Ddd\\Frontend\\": "apps/ddd/frontend/src",
 
+            "MN\\Apps\\Gibmyx\\Backend\\": "apps/gibmyx/backend/src",
+            "MN\\Apps\\Gibmyx\\Frontend\\": "apps/gibmyx/frontend/src",
+
             "MN\\": ["src"]
         }
     },
