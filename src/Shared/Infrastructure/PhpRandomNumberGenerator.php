@@ -7,7 +7,9 @@ declare(strict_types=1);
 namespace MN\Shared\Infrastructure;
 
 
-final class RandomNumberGenerator
+use MN\Gibmyx\Shared\Domain\RandomNumberGenerator;
+
+final class PhpRandomNumberGenerator implements RandomNumberGenerator
 {
     public function generate(): int
     {
