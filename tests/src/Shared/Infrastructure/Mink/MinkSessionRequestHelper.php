@@ -1,10 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: trabajo
- * Date: 18/07/20
- * Time: 11:28 AM
- */
+
+
+
+declare(strict_types=1);
+
 
 namespace MN\Tests\Shared\Infrastructure\Mink;
 
@@ -12,9 +11,9 @@ namespace MN\Tests\Shared\Infrastructure\Mink;
 use Behat\Gherkin\Node\PyStringNode;
 use Symfony\Component\DomCrawler\Crawler;
 
-class MinkSessionRequestHelper
+final class MinkSessionRequestHelper
 {
-#mink session request
+
     /** @var MinkHelper */
     private $sessionHelper;
 

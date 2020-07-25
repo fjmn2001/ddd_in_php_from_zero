@@ -1,4 +1,8 @@
 <?php
+
+declare(strict_types=1);
+
+=======
 /**
  * Created by PhpStorm.
  * User: trabajo
@@ -15,7 +19,8 @@ use Behat\MinkExtension\Context\RawMinkContext;
 use MN\Tests\Shared\Infrastructure\Mink\MinkHelper;
 use MN\Tests\Shared\Infrastructure\Mink\MinkSessionRequestHelper;
 
-class ApiContext extends RawMinkContext
+
+final class ApiContext extends RawMinkContext
 {
     private $sessionHelper;
     private $minkSession;

@@ -1,8 +1,8 @@
-ddd_backend:
+joseq_backend:
   extensions:
     FriendsOfBehat\SymfonyExtension:
       kernel:
-        class: MN\Apps\Ddd\Backend\DddBackendKernel
+        class: MN\Apps\JoseQ\Backend\JoseQBackendKernel
       bootstrap: apps/bootstrap.php
     Behat\MinkExtension:
       sessions:
@@ -12,6 +12,11 @@ ddd_backend:
 
   suites:
     health_check:
-      paths: [ tests/apps/ddd/backend/features/health_check ]
+      paths: [ tests/apps/joseq/backend/features/health_check ]
+      contexts:
+        - MN\Tests\Shared\Infrastructure\Behat\ApiContext
+
+    courses:
+      paths: [ tests/apps/joseq/backend/features/courses ]
       contexts:
         - MN\Tests\Shared\Infrastructure\Behat\ApiContext

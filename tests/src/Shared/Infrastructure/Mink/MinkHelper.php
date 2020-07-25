@@ -1,10 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * Created by PhpStorm.
  * User: trabajo
  * Date: 18/07/20
  * Time: 11:28 AM
  */
+
 
 namespace MN\Tests\Shared\Infrastructure\Mink;
 
@@ -15,9 +19,9 @@ use Symfony\Component\BrowserKit\AbstractBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpFoundation\Request;
 
-class MinkHelper
+final class MinkHelper
 {
-# mink helper
+
     private $session;
 
     public function __construct(Session $session)
