@@ -1,3 +1,5 @@
+imports:
+  - { resource: ../../../../src/Gibmyx/Shared/Infrastructure/Symfony/DependencyInjection/gibmyx_services.yaml }
 
 services:
   _defaults:
@@ -5,7 +7,7 @@ services:
     autowire: true
 
   # Configure
-  MN\Apps\Ddd\Backend\Controller\:
+  MN\Apps\Gibmyx\Backend\Controller\:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']
 
@@ -13,8 +15,8 @@ services:
   MN\Shared\:
     resource: '../../../../src/Shared'
 
-  MN\Ddd\:
-    resource: '../../../../src/Ddd'
+  MN\Gibmyx\:
+    resource: '../../../../src/Gibmyx'
 
   # -- TAGGING --
   MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:

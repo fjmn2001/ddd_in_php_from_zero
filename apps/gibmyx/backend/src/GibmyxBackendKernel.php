@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 
-namespace MN\Apps\Ddd\Backend;
+namespace MN\Apps\Gibmyx\Backend;
 
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Routing\RouteCollectionBuilder;
 
-final class DddBackendKernel extends Kernel
+final class GibmyxBackendKernel extends Kernel
 {
     use MicroKernelTrait;
     private const CONFIG_EXTS = '.{xml,yml}';

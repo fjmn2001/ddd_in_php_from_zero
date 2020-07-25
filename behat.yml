@@ -1,0 +1,3 @@
+imports:
+  - tests/apps/ddd/backend/ddd_backend.yml
+  - tests/apps/gibmyx/backend/gibmyx_backend.yml
