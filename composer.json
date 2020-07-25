@@ -29,6 +29,9 @@
             "MN\\Apps\\Ddd\\Backend\\": "apps/ddd/backend/src",
             "MN\\Apps\\Ddd\\Frontend\\": "apps/ddd/frontend/src",
 
+            "MN\\Apps\\Francisco\\Backend\\": "apps/francisco/backend/src",
+            "MN\\Apps\\Francisco\\Frontend\\": "apps/francisco/frontend/src",
+
             "MN\\": ["src"]
         }
     },
