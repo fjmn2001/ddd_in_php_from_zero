@@ -1,6 +1,9 @@
 <?php
 
 
+declare(strict_types=1);
+
+
 namespace MN\Tests\Shared\Infrastructure\Mink;
 
 
@@ -10,7 +13,8 @@ use Symfony\Component\BrowserKit\AbstractBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpFoundation\Request;
 
-class MinkHelper
+final class MinkHelper
+
 {
     private $session;
 

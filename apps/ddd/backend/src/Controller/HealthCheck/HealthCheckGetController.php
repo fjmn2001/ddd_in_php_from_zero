@@ -19,11 +19,12 @@ final class HealthCheckGetController
         $this->generator = $generator;
     }
 
-    public function __invoke()
+
+    public function __invoke(): JsonResponse
     {
         return new JsonResponse([
             'ddd-backend' => 'ok',
-            'rand' => $this->generator->generate()
+            'number' => $this->generator->generate()
         ]);
     }
 }

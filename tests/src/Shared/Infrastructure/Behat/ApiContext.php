@@ -1,8 +1,10 @@
 <?php
 
 
-namespace MN\Tests\Shared\Infrastructure\Behat;
+declare(strict_types=1);
 
+
+namespace MN\Tests\Shared\Infrastructure\Behat;
 
 
 
