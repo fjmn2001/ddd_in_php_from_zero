@@ -1,0 +1,24 @@
+imports:
+  - { resource: ../../../../src/Daniel/Shared/Infrastructure/Symfony/DependencyInjection/daniel_services.yaml }
+
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  # Configure
+  MN\Apps\Daniel\Backend\Controller\:
+    resource: '../src/Controller'
+    tags: ['controller.service_arguments']
+
+  # Wire
+  MN\Shared\:
+    resource: '../../../../src/Shared'
+
+  MN\Francisco\:
+    resource: '../../../../src/daniel'
+
+  # -- TAGGING --
+  MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }

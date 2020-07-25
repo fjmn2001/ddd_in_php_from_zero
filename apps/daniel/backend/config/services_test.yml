@@ -1,0 +1,14 @@
+framework:
+  test: true
+
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  MN\Tests\:
+    resource: '../../../../tests/src'
+
+  # Instance selector
+  MN\Shared\Domain\RandomNumberGenerator: '@MN\Tests\Shared\Infrastructure\ConstantNumberGenerator'
+#  CodelyTv\Shared\Domain\Bus\Event\EventBus: '@CodelyTv\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus'
