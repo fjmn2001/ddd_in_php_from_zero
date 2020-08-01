@@ -31,6 +31,9 @@
             "MN\\Apps\\Daniel\\Backend\\": "apps/daniel/backend/src",
             "MN\\Apps\\Daniel\\Frontend\\": "apps/daniel/frontend/src",
 
+            "MN\\Apps\\Francisco\\Backend\\": "apps/francisco/backend/src",
+            "MN\\Apps\\Francisco\\Frontend\\": "apps/francisco/frontend/src",
+
             "MN\\": ["src"]
         }
     },
