@@ -22,5 +22,21 @@ class Course
         $this->id = $id;
         $this->name = $name;
         $this->duration = $duration;
+
+    }
+
+    public function Id(): string
+    {
+        return $this->id;
+    }
+
+    public function Name(): string
+    {
+        return $this->name;
+    }
+
+    public function Duration(): string
+    {
+        return $this->duration;
     }
 }

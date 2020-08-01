@@ -17,6 +17,24 @@ class FileCourseRepositoryTest extends TestCase
     {
         $repository = new FileCourseRepository();
         $course = new Course('id', 'name', 'duration');
+
         $repository->save($course);
+    }
+
+    public function it_should_return_an_existing_course(): void
+    {
+        $course_id = (string)rand(1,100);
+        $repository = new FileCourseRepository();
+        $course = new Course($course_id, 'name', 'duration');
+
+        $repository->save($course);
+
+        $this->assertEquals($course, $repository->search($course_id));
+    }
+
+    public function it_should__not_return_an_existing_course(): void
+    {
+        $repository = new FileCourseRepository();
+        $this->assertNull($repository->search('No exist_course'));
     }
 }
