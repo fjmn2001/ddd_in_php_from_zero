@@ -14,14 +14,9 @@ use MN\Joseq\Courses\Domain\CourseRepository;
 
 class CourseCreator
 {
-    /**
-     * @var CourseRepository
-     */
+
     private $repository;
 
-    /**
-     * CourseCreator constructor.
-     */
     public function __construct(CourseRepository $repository)
     {
         $this->repository = $repository;
