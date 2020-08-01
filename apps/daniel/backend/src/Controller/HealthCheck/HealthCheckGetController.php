@@ -4,7 +4,7 @@
 declare(strict_types=1);
 
 
-namespace MN\Apps\Ddd\Backend\Controller\HealthCheck;
+namespace MN\Apps\Daniel\Backend\Controller\HealthCheck;
 
 
 use MN\Shared\Domain\RandomNumberGenerator;
@@ -23,7 +23,7 @@ final class HealthCheckGetController
     public function __invoke(): JsonResponse
     {
         return new JsonResponse([
-            'ddd-backend' => 'ok',
+            'daniel-backend' => 'ok',
             'rand' => $this->generator->generate()
         ]);
     }

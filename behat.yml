@@ -1,3 +1,4 @@
 imports:
   - tests/apps/ddd/backend/ddd_backend.yml
+  - tests/apps/daniel/backend/daniel_backend.yml
   - tests/apps/francisco/backend/francisco_backend.yml
