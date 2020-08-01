@@ -6,11 +6,11 @@
  * Time: 10:58 AM
  */
 
-namespace MN\Joseq\Courses\Application;
+namespace MN\JoseQ\Courses\Application;
 
 
-use MN\Joseq\Courses\Domain\Course;
-use MN\Joseq\Courses\Domain\CourseRepository;
+use MN\JoseQ\Courses\Domain\Course;
+use MN\JoseQ\Courses\Domain\CourseRepository;
 
 class CourseCreator
 {

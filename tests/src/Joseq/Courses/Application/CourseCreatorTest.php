@@ -9,9 +9,9 @@
 namespace MN\Tests\Joseq\Courses\Application;
 
 
-use MN\Joseq\Courses\Application\CourseCreator;
-use MN\Joseq\Courses\Domain\Course;
-use MN\Joseq\Courses\Domain\CourseRepository;
+use MN\JoseQ\Courses\Application\CourseCreator;
+use MN\JoseQ\Courses\Domain\Course;
+use MN\JoseQ\Courses\Domain\CourseRepository;
 use PHPUnit\Framework\TestCase;
 
 class CourseCreatorTest extends TestCase

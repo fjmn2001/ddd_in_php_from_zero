@@ -6,7 +6,7 @@ declare(strict_types=1);
 
 namespace MN\Apps\JoseQ\Backend\Controller\Courses;
 
-use MN\Joseq\Courses\Application\CourseCreator;
+use MN\JoseQ\Courses\Application\CourseCreator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

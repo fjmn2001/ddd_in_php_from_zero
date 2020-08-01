@@ -6,7 +6,7 @@
  * Time: 11:21 AM
  */
 
-namespace MN\Joseq\Courses\Domain;
+namespace MN\JoseQ\Courses\Domain;
 
 
 class Course
@@ -23,6 +23,4 @@ class Course
         $this->name = $name;
         $this->duration = $duration;
     }
-
-
 }

@@ -6,7 +6,7 @@
  * Time: 10:49 AM
  */
 
-namespace MN\Joseq\Courses\Domain;
+namespace MN\JoseQ\Courses\Domain;
 
 
 interface CourseRepository
