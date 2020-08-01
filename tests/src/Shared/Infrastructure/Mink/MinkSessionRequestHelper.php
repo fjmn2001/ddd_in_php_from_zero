@@ -1,7 +1,5 @@
 <?php
 
-
-
 declare(strict_types=1);
 
 
@@ -12,8 +10,8 @@ use Behat\Gherkin\Node\PyStringNode;
 use Symfony\Component\DomCrawler\Crawler;
 
 final class MinkSessionRequestHelper
-{
 
+{
     /** @var MinkHelper */
     private $sessionHelper;
 

@@ -1,5 +1,6 @@
 imports:
   - tests/apps/ddd/backend/ddd_backend.yml
-
   - tests/apps/joseq/backend/joseq_backend.yml
-
+  - tests/apps/gibmyx/backend/gibmyx_backend.yml
+  - tests/apps/daniel/backend/daniel_backend.yml
+  - tests/apps/francisco/backend/francisco_backend.yml

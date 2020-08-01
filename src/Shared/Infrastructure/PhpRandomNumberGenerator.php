@@ -15,7 +15,7 @@ final class PhpRandomNumberGenerator implements RandomNumberGenerator
      * @return int
      * @throws \Exception
      */
-    public function generate(): int
+    public function generate() : int
     {
         return random_int(1, 5);
     }

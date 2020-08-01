@@ -13,6 +13,7 @@ declare(strict_types=1);
 namespace MN\Tests\Shared\Infrastructure\Behat;
 
 
+
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Mink\Session;
 use Behat\MinkExtension\Context\RawMinkContext;
