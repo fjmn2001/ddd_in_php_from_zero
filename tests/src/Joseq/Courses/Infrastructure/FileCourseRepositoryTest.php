@@ -35,6 +35,6 @@ class FileCourseRepositoryTest extends TestCase
     public function it_should__not_return_an_existing_course(): void
     {
         $repository = new FileCourseRepository();
-        $this->assertNull($repository->search('No exist_course'));
+        $this->assertNull($repository->search('no_exist_course'));
     }
 }
