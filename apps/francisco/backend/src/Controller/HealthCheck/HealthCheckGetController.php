@@ -4,7 +4,8 @@
 declare(strict_types=1);
 
 
-namespace MN\Apps\Ddd\Backend\Controller\HealthCheck;
+namespace MN\Apps\Francisco\Backend\Controller\HealthCheck;
+
 
 
 use MN\Shared\Domain\RandomNumberGenerator;
@@ -12,9 +13,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 final class HealthCheckGetController
 {
-    /**
-     * @var RandomNumberGenerator
-     */
     private $generator;
 
     public function __construct(RandomNumberGenerator $generator)
@@ -22,12 +20,10 @@ final class HealthCheckGetController
         $this->generator = $generator;
     }
 
-
-
     public function __invoke(): JsonResponse
     {
         return new JsonResponse([
-            'ddd-backend' => 'ok',
+            'francisco-backend' => 'ok',
             'rand' => $this->generator->generate()
         ]);
     }

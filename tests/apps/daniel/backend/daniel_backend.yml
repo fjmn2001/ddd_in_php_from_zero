@@ -1,0 +1,22 @@
+daniel_backend:
+  extensions:
+    FriendsOfBehat\SymfonyExtension:
+      kernel:
+        class: MN\Apps\Daniel\Backend\DanielBackendKernel
+      bootstrap: apps/bootstrap.php
+    Behat\MinkExtension:
+      sessions:
+        symfony:
+          symfony: ~
+      base_url: ''
+
+  suites:
+    health_check:
+      paths: [ tests/apps/daniel/backend/features/health_check ]
+      contexts:
+        - MN\Tests\Shared\Infrastructure\Behat\ApiContext
+
+    courses:
+      paths: [ tests/apps/daniel/backend/features/courses ]
+      contexts:
+        - MN\Tests\Shared\Infrastructure\Behat\ApiContext

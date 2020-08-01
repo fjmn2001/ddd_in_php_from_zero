@@ -14,6 +14,7 @@ use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpFoundation\Request;
 
 final class MinkHelper
+
 {
     private $session;
 
@@ -96,4 +97,5 @@ final class MinkHelper
         $this->getSession()->reset();
         $this->resetServerParameters();
     }
+
 }

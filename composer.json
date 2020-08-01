@@ -10,8 +10,7 @@
         }
     ],
     "require": {
-        "php": "^7.2.19",
-
+        "php": "^7.3.0",
         "ext-json": "*",
         "symfony/framework-bundle": "^4.3",
         "symfony/dotenv": "^4.3",
@@ -22,7 +21,7 @@
         "behat/mink-extension": "^2.3",
         "behat/mink-browserkit-driver": "^1.3",
         "friends-of-behat/symfony-extension": "^2.0",
-        "phpunit/phpunit": "^8.5"
+        "phpunit/phpunit": "^9.2"
     },
     "autoload": {
         "psr-4": {
@@ -31,6 +30,12 @@
 
             "MN\\Apps\\Gibmyx\\Backend\\": "apps/gibmyx/backend/src",
             "MN\\Apps\\Gibmyx\\Frontend\\": "apps/gibmyx/frontend/src",
+
+            "MN\\Apps\\Daniel\\Backend\\": "apps/daniel/backend/src",
+            "MN\\Apps\\Daniel\\Frontend\\": "apps/daniel/frontend/src",
+
+            "MN\\Apps\\Francisco\\Backend\\": "apps/francisco/backend/src",
+            "MN\\Apps\\Francisco\\Frontend\\": "apps/francisco/frontend/src",
 
             "MN\\": ["src"]
         }
