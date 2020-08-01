@@ -1,8 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MN\Tests\Shared\Infrastructure;
 
-class ConstantRandomNumberGenerator implements \MN\Shared\Domain\RandomNumberGenerator
+use MN\Shared\Domain\RandomNumberGenerator;
+
+
+final class ConstantRandomNumberGenerator implements RandomNumberGenerator
+
 {
     public function generate(): int
     {
