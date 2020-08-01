@@ -25,17 +25,17 @@ class Course
 
     }
 
-    public function Id(): string
+    public function id(): string
     {
         return $this->id;
     }
 
-    public function Name(): string
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function Duration(): string
+    public function duration(): string
     {
         return $this->duration;
     }
