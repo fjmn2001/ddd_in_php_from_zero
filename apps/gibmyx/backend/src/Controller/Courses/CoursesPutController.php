@@ -8,8 +8,6 @@ namespace MN\Apps\Gibmyx\Backend\Controller\Courses;
 
 
 use MN\Gibmyx\Courses\Application\CourseCreator;
-use MN\Shared\Domain\RandomNumberGenerator;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -17,7 +15,7 @@ final class CoursesPutController
 {
     private $creator;
 
-    public function __constructor(CourseCreator $creator)
+    public function __construct(CourseCreator $creator)
     {
         $this->creator = $creator;
     }
