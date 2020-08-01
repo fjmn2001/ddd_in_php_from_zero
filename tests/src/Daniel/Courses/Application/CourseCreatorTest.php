@@ -25,9 +25,8 @@ final class CourseCreatorTest extends TestCase
         $name = "some-name";
         $duration = "some-duration";
 
-        $course = new Course($id, $name, $duration);
-
-        $repository->method('save')->with($course);
+//        $course = new Course($id, $name, $duration);
+//        $repository->method('save')->with($course);
 
         $creator->__invoke($id, $name, $duration);
     }
