@@ -1,17 +1,10 @@
 <?php
 
+
 declare(strict_types=1);
 
-=======
-/**
- * Created by PhpStorm.
- * User: trabajo
- * Date: 18/07/20
- * Time: 11:23 AM
- */
 
 namespace MN\Tests\Shared\Infrastructure\Behat;
-
 
 
 use Behat\Gherkin\Node\PyStringNode;
@@ -19,7 +12,6 @@ use Behat\Mink\Session;
 use Behat\MinkExtension\Context\RawMinkContext;
 use MN\Tests\Shared\Infrastructure\Mink\MinkHelper;
 use MN\Tests\Shared\Infrastructure\Mink\MinkSessionRequestHelper;
-
 
 final class ApiContext extends RawMinkContext
 {
