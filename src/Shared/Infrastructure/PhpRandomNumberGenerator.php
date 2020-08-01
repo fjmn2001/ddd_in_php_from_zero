@@ -1,13 +1,22 @@
 <?php
 
+
+declare(strict_types=1);
+
+
 namespace MN\Shared\Infrastructure;
 
 
-final class PhpRandomNumberGenerator implements \MN\Shared\Domain\RandomNumberGenerator
+use MN\Shared\Domain\RandomNumberGenerator;
+
+final class PhpRandomNumberGenerator implements RandomNumberGenerator
 {
+    /**
+     * @return int
+     * @throws \Exception
+     */
     public function generate() : int
     {
         return random_int(1, 5);
     }
-
 }
