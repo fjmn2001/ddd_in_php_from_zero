@@ -1,0 +1,4 @@
+courses_put:
+  path: /courses/{id}
+  controller: MN\Apps\JoseQ\Backend\Controller\Courses\CoursesPutController
+  methods:  [PUT]
