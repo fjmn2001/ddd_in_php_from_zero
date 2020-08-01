@@ -22,12 +22,16 @@
         "behat/behat": "^3.5",
         "behat/mink-extension": "^2.3",
         "behat/mink-browserkit-driver": "^1.3",
-        "friends-of-behat/symfony-extension": "^2.0"
+        "friends-of-behat/symfony-extension": "^2.0",
+        "phpunit/phpunit": "^9.2"
     },
     "autoload": {
         "psr-4": {
             "MN\\Apps\\Ddd\\Backend\\": "apps/ddd/backend/src",
             "MN\\Apps\\Ddd\\Frontend\\": "apps/ddd/frontend/src",
+
+            "MN\\Apps\\Francisco\\Backend\\": "apps/francisco/backend/src",
+            "MN\\Apps\\Francisco\\Frontend\\": "apps/francisco/frontend/src",
 
             "MN\\": ["src"]
         }
