@@ -1,6 +1,7 @@
 imports:
   - { resource: ../../../../src/Ddd/Shared/Infrastructure/Symfony/DependencyInjection/ddd_services.yaml }
 
+
 services:
   _defaults:
     autoconfigure: true
