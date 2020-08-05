@@ -41,6 +41,9 @@
             "MN\\Apps\\Francisco\\Backend\\": "apps/francisco/backend/src",
             "MN\\Apps\\Francisco\\Frontend\\": "apps/francisco/frontend/src",
 
+            "MN\\Apps\\Gabriel\\Backend\\": "apps/gabriel/backend/src",
+            "MN\\Apps\\Gabriel\\Frontend\\": "apps/gabriel/frontend/src",
+
             "MN\\": ["src"]
         }
     },

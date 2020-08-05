@@ -8,4 +8,5 @@ src/Gibmyx/Courses/Infrastructure/*.*.repo
 src/Francisco/Courses/Infrastructure/*.*.repo
 src/Daniel/Courses/Infrastructure/*.*.repo
 src/JoseQ/Courses/Infrastructure/*.*.repo
+src/Gabriel/Courses/Infrastructure/*.*.repo
 /apps/*/*/var/
