@@ -9,6 +9,9 @@ namespace MN\Tests\Daniel\Courses\Application;
 use MN\Daniel\Courses\Application\CourseCreator;
 use MN\Daniel\Courses\Application\CreateCourseRequest;
 use MN\Daniel\Courses\Domain\Course;
+use MN\Daniel\Courses\Domain\CourseDuration;
+use MN\Daniel\Courses\Domain\CourseId;
+use MN\Daniel\Courses\Domain\CourseName;
 use MN\Daniel\Courses\Domain\CourseRepository;
 use PHPUnit\Framework\TestCase;
 
@@ -22,13 +25,15 @@ final class CourseCreatorTest extends TestCase
         $repository = $this->createMock(CourseRepository::class);
         $creator = new CourseCreator($repository);
 
-        $id = "some-id";
+        $course_id = CourseId::random();
         $name = "some-name";
         $duration = "some-duration";
 
-//        $course = new Course($id, $name, $duration);
-//        $repository->method('save')->with($course);
+        $course = new Course(new CourseId($course_id->value()),
+                            new CourseName($name),
+                            new CourseDuration($duration));
+        $repository->method('save')->with($course);
 
-        $creator->__invoke(new CreateCourseRequest($id, $name, $duration));
+        $creator->__invoke(new CreateCourseRequest($course_id->value(), $name, $duration));
     }
 }

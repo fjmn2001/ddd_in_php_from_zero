@@ -21,7 +21,7 @@ final class FileCourseRepositoryTest extends TestCase
     public function it_should_save_a_valid_course(): void
     {
         $repository = new FileCourseRepository();
-        $course = new Course(CourseId::random(),
+        $course = new Course(new CourseId(CourseId::random()->value()),
                             new CourseName('name'),
                             new CourseDuration('duration'));
 
@@ -35,13 +35,13 @@ final class FileCourseRepositoryTest extends TestCase
     {
         $course_id = CourseId::random();
         $repository = new FileCourseRepository();
-        $course = new Course($course_id,
+        $course = new Course(new CourseId($course_id->value()),
                             new CourseName('name'),
                             new CourseDuration('duration'));
 
         $repository->save($course);
 
-        $this->assertEquals($course, $repository->search($course_id));
+        $this->assertEquals($course, $repository->search(new CourseId($course_id->value())));
     }
 
     /**
@@ -51,6 +51,6 @@ final class FileCourseRepositoryTest extends TestCase
     {
         $course_id = CourseId::random();
         $repository = new FileCourseRepository();
-        $this->assertNull($repository->search($course_id));
+        $this->assertNull($repository->search(new CourseId($course_id->value())));
     }
 }
