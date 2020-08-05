@@ -7,6 +7,7 @@ namespace MN\Tests\Daniel\Courses\Application;
 
 
 use MN\Daniel\Courses\Application\CourseCreator;
+use MN\Daniel\Courses\Application\CreateCourseRequest;
 use MN\Daniel\Courses\Domain\Course;
 use MN\Daniel\Courses\Domain\CourseRepository;
 use PHPUnit\Framework\TestCase;
@@ -28,6 +29,6 @@ final class CourseCreatorTest extends TestCase
 //        $course = new Course($id, $name, $duration);
 //        $repository->method('save')->with($course);
 
-        $creator->__invoke($id, $name, $duration);
+        $creator->__invoke(new CreateCourseRequest($id, $name, $duration));
     }
 }
