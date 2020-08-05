@@ -9,7 +9,7 @@ namespace MN\Shared\Domain\ValueObject;
 
 use Ramsey\Uuid\Uuid as RamseyUuid;
 
-final class Uuid
+class Uuid
 {
     private $value;
 
