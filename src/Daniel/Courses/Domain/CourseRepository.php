@@ -1,9 +1,10 @@
 <?php
 
 
-namespace MN\Ddd\Courses\Domain;
+declare(strict_types=1);
 
 
+namespace MN\Daniel\Courses\Domain;
 
 
 interface CourseRepository
