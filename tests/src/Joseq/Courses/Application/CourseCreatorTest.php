@@ -10,6 +10,7 @@ namespace MN\Tests\Joseq\Courses\Application;
 
 
 use MN\JoseQ\Courses\Application\CourseCreator;
+use MN\JoseQ\Courses\Application\CreateCourseRequest;
 use MN\JoseQ\Courses\Domain\Course;
 use MN\JoseQ\Courses\Domain\CourseRepository;
 use PHPUnit\Framework\TestCase;
@@ -32,6 +33,6 @@ class CourseCreatorTest extends TestCase
 
         $repository->method('save')->with($course);
 
-        $creator->__invoke($id, $name, $duration);
+        $creator->__invoke(new CreateCourseRequest($id, $name, $duration));
     }
 }
