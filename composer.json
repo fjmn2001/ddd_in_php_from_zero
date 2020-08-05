@@ -14,7 +14,8 @@
         "ext-json": "*",
         "symfony/framework-bundle": "^4.3",
         "symfony/dotenv": "^4.3",
-        "symfony/yaml": "^4.3"
+        "symfony/yaml": "^4.3",
+        "ramsey/uuid": "^3.9"
     },
     "require-dev": {
         "behat/behat": "^3.5",
@@ -39,6 +40,9 @@
 
             "MN\\Apps\\Francisco\\Backend\\": "apps/francisco/backend/src",
             "MN\\Apps\\Francisco\\Frontend\\": "apps/francisco/frontend/src",
+
+            "MN\\Apps\\Nelson\\Backend\\": "apps/Nelson/backend/src",
+            "MN\\Apps\\Nelson\\Frontend\\": "apps/Nelson/frontend/src",
 
             "MN\\": ["src"]
         }

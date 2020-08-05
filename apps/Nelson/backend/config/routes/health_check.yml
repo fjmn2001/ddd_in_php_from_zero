@@ -1,0 +1,4 @@
+health-check_get:
+  path: /health-check
+  controller: MN\Apps\Nelson\Backend\Controller\HealthCheck\HealthCheckGetController
+  methods:  [GET]
