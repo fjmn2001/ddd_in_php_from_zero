@@ -1,8 +1,10 @@
 <?php
 
+
 declare(strict_types=1);
 
-namespace MN\Ddd\Courses\Domain;
+
+namespace MN\Gibmyx\Courses\Domain;
 
 
 final class Course
@@ -19,25 +21,16 @@ final class Course
         $this->duration = $duration;
     }
 
-    /**
-     * @return string
-     */
     public function id(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function name(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function duration(): string
     {
         return $this->duration;

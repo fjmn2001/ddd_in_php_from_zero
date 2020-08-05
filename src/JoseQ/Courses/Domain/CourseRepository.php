@@ -1,9 +1,12 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: trabajo
+ * Date: 01/08/20
+ * Time: 10:49 AM
+ */
 
-
-namespace MN\Ddd\Courses\Domain;
-
-
+namespace MN\JoseQ\Courses\Domain;
 
 
 interface CourseRepository
@@ -11,4 +14,6 @@ interface CourseRepository
     public function save(Course $course): void;
 
     public function search(string $id): ?Course;
+
+
 }
