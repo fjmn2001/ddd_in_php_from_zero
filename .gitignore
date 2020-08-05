@@ -2,5 +2,5 @@
 composer.lock
 vendor
 .env
-
+.phpunit.result.cache
 /apps/*/*/var/
