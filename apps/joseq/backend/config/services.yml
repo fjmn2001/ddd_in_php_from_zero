@@ -1,3 +1,5 @@
+imports:
+  - { resource: ../../../../src/JoseQ/Shared/Infrastructure/Symfony/DependencyInjection/joseq_services.yaml }
 
 services:
   _defaults:
@@ -5,7 +7,7 @@ services:
     autowire: true
 
   # Configure
-  MN\Apps\Ddd\Backend\Controller\:
+  MN\Apps\JoseQ\Backend\Controller\:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']
 
@@ -13,8 +15,8 @@ services:
   MN\Shared\:
     resource: '../../../../src/Shared'
 
-  MN\Ddd\:
-    resource: '../../../../src/Ddd'
+  MN\JoseQ\:
+    resource: '../../../../src/JoseQ'
 
   # -- TAGGING --
   MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
