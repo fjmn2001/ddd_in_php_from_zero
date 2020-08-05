@@ -1,7 +1,13 @@
 <?php
 
-
 declare(strict_types=1);
+
+/**
+ * Created by PhpStorm.
+ * User: trabajo
+ * Date: 18/07/20
+ * Time: 11:28 AM
+ */
 
 
 namespace MN\Tests\Shared\Infrastructure\Mink;
@@ -14,7 +20,9 @@ use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpFoundation\Request;
 
 final class MinkHelper
+
 {
+
     private $session;
 
     public function __construct(Session $session)
@@ -96,4 +104,5 @@ final class MinkHelper
         $this->getSession()->reset();
         $this->resetServerParameters();
     }
+
 }

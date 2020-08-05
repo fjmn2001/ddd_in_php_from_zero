@@ -1,5 +1,6 @@
 imports:
-  - { resource: ../../../../src/Ddd/Shared/Infrastructure/Symfony/DependencyInjection/ddd_services.yaml }
+  - { resource: ../../../../src/Ddd/Shared/Infrastructure/Symfony/DependencyInjection/ddd_services.yml }
+
 
 services:
   _defaults:

@@ -1,0 +1,24 @@
+imports:
+  - { resource: ../../../../src/Gibmyx/Shared/Infrastructure/Symfony/DependencyInjection/gibmyx_services.yaml }
+
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  # Configure
+  MN\Apps\Gibmyx\Backend\Controller\:
+    resource: '../src/Controller'
+    tags: ['controller.service_arguments']
+
+  # Wire
+  MN\Shared\:
+    resource: '../../../../src/Shared'
+
+  MN\Gibmyx\:
+    resource: '../../../../src/Gibmyx'
+
+  # -- TAGGING --
+  MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }

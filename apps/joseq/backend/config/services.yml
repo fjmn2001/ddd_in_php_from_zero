@@ -1,0 +1,24 @@
+imports:
+  - { resource: ../../../../src/JoseQ/Shared/Infrastructure/Symfony/DependencyInjection/joseq_services.yaml }
+
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  # Configure
+  MN\Apps\JoseQ\Backend\Controller\:
+    resource: '../src/Controller'
+    tags: ['controller.service_arguments']
+
+  # Wire
+  MN\Shared\:
+    resource: '../../../../src/Shared'
+
+  MN\JoseQ\:
+    resource: '../../../../src/JoseQ'
+
+  # -- TAGGING --
+  MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
