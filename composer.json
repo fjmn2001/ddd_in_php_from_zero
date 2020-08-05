@@ -28,7 +28,6 @@
             "MN\\Apps\\Ddd\\Backend\\": "apps/ddd/backend/src",
             "MN\\Apps\\Ddd\\Frontend\\": "apps/ddd/frontend/src",
 
-
             "MN\\Apps\\Pereira\\Backend\\": "apps/pereira/backend/src",
             "MN\\Apps\\Pereira\\Frontend\\": "apps/pereira/frontend/src",
 
