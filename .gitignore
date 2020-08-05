@@ -3,4 +3,6 @@ composer.lock
 vendor
 .env
 .phpunit.result.cache
+src/Gibmyx/Courses/Infrastructure/*.*.repo
+src/Francisco/Courses/Infrastructure/*.*.repo
 /apps/*/*/var/
