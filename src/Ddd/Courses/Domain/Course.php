@@ -18,4 +18,28 @@ final class Course
         $this->name = $name;
         $this->duration = $duration;
     }
+
+    /**
+     * @return string
+     */
+    public function id(): string
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function name(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function duration(): string
+    {
+        return $this->duration;
+    }
 }
