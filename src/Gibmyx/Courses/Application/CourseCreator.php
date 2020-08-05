@@ -20,9 +20,9 @@ class CourseCreator
         $this->reposirtory = $reposirtory;
     }
 
-    public function __invoke(string $id, string $name, string $duration) :void
+    public function __invoke(CreateCourseRequest $request) :void
     {
-        $course = new Course ($id, $name, $duration);
+        $course = new Course ($request->id(), $request->name(), $request->duration());
 
         $this->reposirtory->save($course);
     }

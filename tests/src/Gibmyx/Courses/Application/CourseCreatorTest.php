@@ -8,6 +8,7 @@ namespace MN\Tests\Gibmyx\Courses\Application;
 
 
 use MN\Gibmyx\Courses\Application\CourseCreator;
+use MN\Gibmyx\Courses\Application\CreateCourseRequest;
 use MN\Gibmyx\Courses\Domain\Course;
 use MN\Gibmyx\Courses\Domain\CourseRepository;
 use PHPUnit\Framework\TestCase;
@@ -30,6 +31,6 @@ final class CourseCreatorTest extends TestCase
 
         $repository->method('save')->with($course);
 
-        $creator->__invoke($id, $name, $duration);
+        $creator->__invoke( new CreateCourseRequest($id, $name, $duration) );
     }
 }
