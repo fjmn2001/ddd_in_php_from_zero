@@ -1,1 +1,0 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":156:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:1:{s:96:"MN\Tests\Shared\Infrastructure\PhpRandomNumbterGeneratorTest::it_should_generate_a_random_number";d:0.002;}}}

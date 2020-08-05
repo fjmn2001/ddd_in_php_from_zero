@@ -4,21 +4,20 @@
 declare(strict_types=1);
 
 
-namespace MN\Apps\Gibmyx\Backend\Controller\Courses;
+namespace MN\Apps\Ddd\Backend\Controller\Courses;
 
 
-use MN\Gibmyx\Courses\Application\CourseCreator;
+use MN\Ddd\Courses\Application\CourseCreator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 final class CoursesPutController
 {
-    private $creator;
-
     public function __construct(CourseCreator $creator)
     {
         $this->creator = $creator;
     }
+
     public function __invoke(string $id, Request $request): Response
     {
         $name       = $request->get('name');
