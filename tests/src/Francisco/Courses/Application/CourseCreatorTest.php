@@ -8,6 +8,7 @@ namespace MN\Tests\Francisco\Courses\Application;
 
 
 use MN\Francisco\Courses\Application\CourseCreator;
+use MN\Francisco\Courses\Application\CreateCourseRequest;
 use MN\Francisco\Courses\Domain\Course;
 use MN\Francisco\Courses\Domain\CourseRepository;
 use PHPUnit\Framework\TestCase;
@@ -29,6 +30,6 @@ final class CourseCreatorTest extends TestCase
         $course = new Course($id, $name, $duration);
         $repository->method('save')->with($course);
 
-        $creator->__invoke($id, $name, $duration);
+        $creator->__invoke(new CreateCourseRequest($id, $name, $duration));
     }
 }
