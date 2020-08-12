@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+
         "php": "^7.1",
         "ext-json": "*",
         "symfony/framework-bundle": "^4.3",
@@ -29,6 +30,9 @@
             "MN\\Apps\\Ddd\\Backend\\": "apps/ddd/backend/src",
             "MN\\Apps\\Ddd\\Frontend\\": "apps/ddd/frontend/src",
 
+            "MN\\Apps\\Pereira\\Backend\\": "apps/pereira/backend/src",
+            "MN\\Apps\\Pereira\\Frontend\\": "apps/pereira/frontend/src",
+
             "MN\\Apps\\JoseQ\\Backend\\": "apps/joseq/backend/src",
             "MN\\Apps\\JoseQ\\Frontend\\": "apps/joseq/frontend/src",
 
@@ -40,6 +44,9 @@
 
             "MN\\Apps\\Francisco\\Backend\\": "apps/francisco/backend/src",
             "MN\\Apps\\Francisco\\Frontend\\": "apps/francisco/frontend/src",
+
+            "MN\\Apps\\Christian\\Backend\\": "apps/christian/backend/src",
+            "MN\\Apps\\Christian\\Frontend\\": "apps/christian/frontend/src",
 
             "MN\\": ["src"]
         }
