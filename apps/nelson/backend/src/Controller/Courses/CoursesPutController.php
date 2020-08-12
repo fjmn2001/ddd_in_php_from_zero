@@ -8,6 +8,7 @@ namespace MN\Apps\Nelson\Backend\Controller\Courses;
 
 
 use MN\Nelson\Courses\Application\CourseCreator;
+use MN\Nelson\Courses\Application\CreateCourseRequest;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -26,7 +27,7 @@ final class CoursesPutController
         $name = $request->get('name');
         $duration = $request->get('duration');
 
-        $this->creator->__invoke($id, $name, $duration);
+        $this->creator->__invoke(new CreateCourseRequest($id, $name, $duration));
 
         return new Response('', Response::HTTP_CREATED);
     }

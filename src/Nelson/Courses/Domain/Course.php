@@ -7,30 +7,33 @@ declare(strict_types=1);
 namespace MN\Nelson\Courses\Domain;
 
 
+use MN\Nelson\Courses\Domain\CourseDuration;
+use MN\Nelson\Courses\Domain\CourseName;
+
 final class Course
 {
     private $id;
     private $name;
     private $duration;
 
-    public function __construct(string $id, string $name, string $duration)
+    public function __construct(CourseId $id, CourseName $name, CourseDuration $duration)
     {
         $this->id = $id;
         $this->name = $name;
         $this->duration = $duration;
     }
 
-    public function id(): string
+    public function id(): CourseId
     {
         return $this->id;
     }
 
-    public function name(): string
+    public function name(): CourseName
     {
         return $this->name;
     }
 
-    public function duration(): string
+    public function duration(): CourseDuration
     {
         return $this->duration;
     }
