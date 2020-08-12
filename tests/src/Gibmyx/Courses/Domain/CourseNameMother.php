@@ -15,7 +15,8 @@ final class CourseNameMother
         return new CourseName($value);
     }
 
-    public static function random()
+    public static function random(): CourseName
     {
+        return self::create(WorkMother::random());
     }
 }

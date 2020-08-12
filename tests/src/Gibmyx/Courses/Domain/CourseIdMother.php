@@ -7,6 +7,7 @@ namespace MN\Tests\Gibmyx\Courses\Domain;
 
 
 use MN\Gibmyx\Courses\Domain\CourseId;
+use MN\Tests\Shared\Domain\UuidMother;
 
 final class CourseIdMother
 {

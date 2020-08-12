@@ -15,7 +15,14 @@ final class CourseDurationMother
         return new CourseDuration($value);
     }
 
-    public static function random()
+    public static function random(): CourseDuration
     {
+        return self::create(
+            sprintf(
+                '%s %s',
+                IntegerMother::lessThan(100),
+                RandomElementPicker::form('months', 'years', 'days', 'hours', 'minutes', 'secunds')
+            )
+        );
     }
 }
