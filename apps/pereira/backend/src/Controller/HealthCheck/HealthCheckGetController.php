@@ -7,7 +7,8 @@ declare(strict_types=1);
 namespace MN\Apps\Pereira\Backend\Controller\HealthCheck;
 
 
-use MN\Shared\Infrastructure\RandomNumberGenerator;
+
+use MN\Shared\Domain\RandomNumberGenerator;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 final class HealthCheckGetController
@@ -23,7 +24,7 @@ final class HealthCheckGetController
     {
         return new JsonResponse([
             'pereira-backend' => 'ok',
-            'number' => $this->generator->generate()
+            'rand' => $this->generator->generate()
         ]);
     }
 }

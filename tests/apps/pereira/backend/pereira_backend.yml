@@ -1,0 +1,22 @@
+pereira_backend:
+  extensions:
+    FriendsOfBehat\SymfonyExtension:
+      kernel:
+        class: MN\Apps\Pereira\Backend\PereiraBackendKernel
+      bootstrap: apps/bootstrap.php
+    Behat\MinkExtension:
+      sessions:
+        symfony:
+          symfony: ~
+      base_url: ''
+
+  suites:
+    health_check:
+      paths: [ tests/apps/pereira/backend/features/health_check ]
+      contexts:
+        - MN\Tests\Shared\Infrastructure\Behat\ApiContext
+
+    courses:
+      paths: [ tests/apps/pereira/backend/features/courses ]
+      contexts:
+        - MN\Tests\Shared\Infrastructure\Behat\ApiContext

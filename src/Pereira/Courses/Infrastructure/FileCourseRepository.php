@@ -1,13 +1,16 @@
 <?php
 
 
+declare(strict_types=1);
+
+
 namespace MN\Pereira\Courses\Infrastructure;
 
 
 use MN\Pereira\Courses\Domain\Course;
 use MN\Pereira\Courses\Domain\CourseRepository;
 
-class FileCourseRepository implements CourseRepository
+final class FileCourseRepository implements CourseRepository
 {
     private const FILE_PATH = __DIR__ . '/courses';
 

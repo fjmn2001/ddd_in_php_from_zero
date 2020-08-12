@@ -7,7 +7,7 @@ services:
     autowire: true
 
   # Configure
-  MN\Apps\Ddd\Backend\Controller\:
+  MN\Apps\Pereira\Backend\Controller\:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']
 
@@ -15,7 +15,7 @@ services:
   MN\Shared\:
     resource: '../../../../src/Shared'
 
-  MN\Ddd\:
+  MN\Pereira\:
     resource: '../../../../src/Pereira'
 
   # -- TAGGING --
