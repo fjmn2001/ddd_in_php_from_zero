@@ -24,7 +24,8 @@ final class FileCourseRepositoryTest extends TestCase
     public function it_should_save_a_course(): void
     {
         $repository = new FileCourseRepository();
-        $course = new Course(new CourseId(CourseId::random()->value()), new CourseName('name'), new CourseDuration('duration'));
+        $course = new CourseMother::random();
+//        $course = new Course(new CourseId(CourseId::random()->value()), new CourseName('name'), new CourseDuration('duration'));
 
         $repository->save($course);
     }
