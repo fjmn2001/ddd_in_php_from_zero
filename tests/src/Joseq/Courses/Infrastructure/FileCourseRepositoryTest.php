@@ -4,12 +4,7 @@
 namespace MN\Tests\Joseq\Courses\Infrastructure;
 
 
-use MN\JoseQ\Courses\Domain\Course;
-use MN\JoseQ\Courses\Domain\CourseDuration;
-use MN\JoseQ\Courses\Domain\CourseId;
-use MN\JoseQ\Courses\Domain\CourseName;
 use MN\JoseQ\Courses\Infrastructure\FileCourseRepository;
-use MN\Shared\Domain\ValueObject\Uuid;
 use MN\Tests\Joseq\Courses\Domain\CourseMother;
 use PHPUnit\Framework\TestCase;
 
