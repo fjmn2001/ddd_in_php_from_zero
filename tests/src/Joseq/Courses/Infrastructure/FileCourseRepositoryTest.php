@@ -10,6 +10,7 @@ use MN\JoseQ\Courses\Domain\CourseId;
 use MN\JoseQ\Courses\Domain\CourseName;
 use MN\JoseQ\Courses\Infrastructure\FileCourseRepository;
 use MN\Shared\Domain\ValueObject\Uuid;
+use MN\Tests\Joseq\Courses\Domain\CourseMother;
 use PHPUnit\Framework\TestCase;
 
 class FileCourseRepositoryTest extends TestCase
@@ -20,8 +21,7 @@ class FileCourseRepositoryTest extends TestCase
     public function it_should_save_a_course(): void
     {
         $course_id = CourseId::random();
-        $repository = new FileCourseRepository();
-        $course = new Course(new CourseId($course_id->value()), new CourseName('name'), new CourseDuration('duration'));
+        $course = CourseMOther::random();
 
         $repository->save($course);
     }
