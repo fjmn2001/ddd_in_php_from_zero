@@ -7,6 +7,8 @@ namespace MN\Tests\Gibmyx\Courses\Domain;
 
 
 use MN\Gibmyx\Courses\Domain\CourseDuration;
+use MN\Tests\Shared\Domain\IntegerMother;
+use MN\Tests\Shared\Domain\RandomElementPicker;
 
 final class CourseDurationMother
 {
@@ -21,7 +23,7 @@ final class CourseDurationMother
             sprintf(
                 '%s %s',
                 IntegerMother::lessThan(100),
-                RandomElementPicker::form('months', 'years', 'days', 'hours', 'minutes', 'secunds')
+                RandomElementPicker::from('months', 'years', 'days', 'hours', 'minutes', 'secunds')
             )
         );
     }

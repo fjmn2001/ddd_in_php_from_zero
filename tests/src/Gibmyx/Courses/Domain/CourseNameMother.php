@@ -7,6 +7,7 @@ namespace MN\Tests\Gibmyx\Courses\Domain;
 
 
 use MN\Gibmyx\Courses\Domain\CourseName;
+use MN\Tests\Shared\Domain\WordMother;
 
 final class CourseNameMother
 {
@@ -17,6 +18,6 @@ final class CourseNameMother
 
     public static function random(): CourseName
     {
-        return self::create(WorkMother::random());
+        return self::create(WordMother::random());
     }
 }
