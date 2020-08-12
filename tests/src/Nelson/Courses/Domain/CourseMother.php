@@ -4,10 +4,10 @@
 namespace MN\Tests\Nelson\Courses\Domain;
 
 
-use MN\Francisco\Courses\Domain\Course;
-use MN\Francisco\Courses\Domain\CourseId;
-use MN\Francisco\Courses\Domain\CourseName;
-use MN\JoseQ\Courses\Domain\CourseDuration;
+use MN\Nelson\Courses\Domain\Course;
+use MN\Nelson\Courses\Domain\CourseId;
+use MN\Nelson\Courses\Domain\CourseName;
+use MN\Nelson\Courses\Domain\CourseDuration;
 
 final class CourseMother
 {
