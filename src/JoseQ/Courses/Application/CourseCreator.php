@@ -10,6 +10,9 @@ namespace MN\JoseQ\Courses\Application;
 
 
 use MN\JoseQ\Courses\Domain\Course;
+use MN\JoseQ\Courses\Domain\CourseDuration;
+use MN\JoseQ\Courses\Domain\CourseId;
+use MN\JoseQ\Courses\Domain\CourseName;
 use MN\JoseQ\Courses\Domain\CourseRepository;
 
 class CourseCreator
@@ -22,9 +25,9 @@ class CourseCreator
         $this->repository = $repository;
     }
 
-    public function __invoke(string $id, string $name, string $duration): void
+    public function __invoke(CreateCourseRequest $request): void
     {
-        $course = new Course($id, $name, $duration);
+        $course = new Course(new CourseId($request->id()), new CourseName($request->name()), new CourseDuration($request->duration()));
         $this->repository->save($course);
     }
 }
