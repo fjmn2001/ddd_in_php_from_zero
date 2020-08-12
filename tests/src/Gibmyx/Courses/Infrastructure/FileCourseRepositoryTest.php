@@ -6,6 +6,7 @@ declare(strict_types=1);
 namespace MN\Tests\Gibmyx\Courses\Infrastructure;
 
 
+use MN\Tests\Gibmyx\Courses\Domain\CourseMother;
 use PHPUnit\Framework\TestCase;
 use MN\Gibmyx\Courses\Domain\Course;
 use MN\Gibmyx\Courses\Domain\CourseDuration;
@@ -22,6 +23,9 @@ final class FileCourseRepositoryTest extends TestCase
     public function it_should_save_a_course(): void
     {
         $repository = new FileCourseRepository();
+
+
+        $course = CourseMother::random();
         $course = new Course( new CourseId(CourseId::random()->value()), new CourseName('name'), new CourseDuration('duration') );
 
         $repository->save($course);
