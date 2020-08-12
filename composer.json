@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+
         "php": "^7.1",
         "ext-json": "*",
         "symfony/framework-bundle": "^4.3",
@@ -43,6 +44,10 @@
 
             "MN\\Apps\\Gabriel\\Backend\\": "apps/gabriel/backend/src",
             "MN\\Apps\\Gabriel\\Frontend\\": "apps/gabriel/frontend/src",
+
+            "MN\\Apps\\Christian\\Backend\\": "apps/christian/backend/src",
+            "MN\\Apps\\Christian\\Frontend\\": "apps/christian/frontend/src",
+
 
             "MN\\": ["src"]
         }
