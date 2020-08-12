@@ -7,6 +7,8 @@ namespace MN\Tests\Joseq\Courses\Domain;
 
 
 use MN\JoseQ\Courses\Domain\CourseDuration;
+use MN\Tests\Shared\Domain\IntegerMother;
+use MN\Tests\Shared\Domain\RandomElementPicker;
 
 final class CourseDurationMother
 {

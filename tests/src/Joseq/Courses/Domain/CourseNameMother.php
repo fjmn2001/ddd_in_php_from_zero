@@ -7,6 +7,7 @@ namespace MN\Tests\Joseq\Courses\Domain;
 
 
 use MN\JoseQ\Courses\Domain\CourseName;
+use MN\Tests\Shared\Domain\WordMother;
 
 
 final class CourseNameMother
