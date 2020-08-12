@@ -1,13 +1,14 @@
 <?php
 
+
 declare(strict_types=1);
 
 
 namespace MN\Nelson\Courses\Infrastructure;
 
 
-use MN\Ddd\Courses\Domain\Course;
-use MN\Ddd\Courses\Domain\CourseRepository;
+use MN\Nelson\Courses\Domain\Course;
+use MN\Nelson\Courses\Domain\CourseRepository;
 
 final class FileCourseRepository implements CourseRepository
 {

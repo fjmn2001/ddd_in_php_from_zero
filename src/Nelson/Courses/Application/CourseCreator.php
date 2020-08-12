@@ -1,24 +1,26 @@
 <?php
 
+
 declare(strict_types=1);
 
 
 namespace MN\Nelson\Courses\Application;
 
 
-use MN\Ddd\Courses\Domain\CourseRepository;
-use MN\Ddd\Courses\Domain\Course;
+use MN\Nelson\Courses\Domain\Course;
+use MN\Nelson\Courses\Domain\CourseRepository;
 
-class CourseCreator
+final class CourseCreator
 {
 
     private $repository;
 
-    public function __construct(CourseRepository $respository)
+    public function __construct(CourseRepository $repository)
     {
-        $this->repository =$respository;
+        $this->repository = $repository;
     }
-    public function __invoke( string $id, string $name, string $duration): void
+
+    public function __invoke(string $id, string $name, string $duration): void
     {
         $course = new Course($id, $name, $duration);
 

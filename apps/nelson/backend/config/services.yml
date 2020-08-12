@@ -1,6 +1,5 @@
 imports:
-  - { resource: ../../../../src/Nelson/Shared/Infrastructure/Symfony/DependencyInjection/ddd_services.yml }
-
+  - { resource: ../../../../src/Nelson/Shared/Infrastructure/Symfony/DependencyInjection/nelson_services.yaml }
 
 services:
   _defaults:
@@ -8,7 +7,7 @@ services:
     autowire: true
 
   # Configure
-  MN\Apps\Ddd\Backend\Controller\:
+  MN\Apps\Nelson\Backend\Controller\:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']
 
@@ -16,8 +15,8 @@ services:
   MN\Shared\:
     resource: '../../../../src/Shared'
 
-  MN\Ddd\:
-    resource: '../../../../src/Ddd'
+  MN\Nelson\:
+    resource: '../../../../src/Nelson'
 
   # -- TAGGING --
   MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:

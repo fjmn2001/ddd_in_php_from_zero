@@ -4,4 +4,4 @@ imports:
   - tests/apps/gibmyx/backend/gibmyx_backend.yml
   - tests/apps/daniel/backend/daniel_backend.yml
   - tests/apps/francisco/backend/francisco_backend.yml
-  - tests/apps/Nelson/backend/nelson_backend.yml
+  - tests/apps/nelson/backend/nelson_backend.yml
