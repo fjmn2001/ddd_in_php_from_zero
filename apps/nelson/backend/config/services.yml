@@ -1,0 +1,24 @@
+imports:
+  - { resource: ../../../../src/Nelson/Shared/Infrastructure/Symfony/DependencyInjection/nelson_services.yaml }
+
+services:
+  _defaults:
+    autoconfigure: true
+    autowire: true
+
+  # Configure
+  MN\Apps\Nelson\Backend\Controller\:
+    resource: '../src/Controller'
+    tags: ['controller.service_arguments']
+
+  # Wire
+  MN\Shared\:
+    resource: '../../../../src/Shared'
+
+  MN\Nelson\:
+    resource: '../../../../src/Nelson'
+
+  # -- TAGGING --
+  MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
