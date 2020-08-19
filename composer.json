@@ -18,6 +18,7 @@
         "symfony/yaml": "^4.3",
         "ramsey/uuid": "^3.9||^4.1",
         "doctrine/dbal": "^2.9",
+        "doctrine/orm": "^2.7",
         "wouterj/eloquent-bundle": "^1.1"
     },
     "require-dev": {

@@ -8,6 +8,9 @@ namespace MN\Pereira\Courses\Application;
 
 
 use MN\Pereira\Courses\Domain\Course;
+use MN\Pereira\Courses\Domain\CourseDuration;
+use MN\Pereira\Courses\Domain\CourseId;
+use MN\Pereira\Courses\Domain\CourseName;
 use MN\Pereira\Courses\Domain\CourseRepository;
 
 final class CourseCreator
@@ -20,9 +23,9 @@ final class CourseCreator
         $this->repository = $repository;
     }
 
-    public function __invoke(string $id, string $name, string $duration): void
+    public function __invoke(CreateCourseRequest $request): void
     {
-        $course = new Course($id, $name, $duration);
+        $course = new Course(new CourseId($request->id()), new CourseName($request->name()), new CourseDuration($request->duration()));
 
         $this->repository->save($course);
     }
