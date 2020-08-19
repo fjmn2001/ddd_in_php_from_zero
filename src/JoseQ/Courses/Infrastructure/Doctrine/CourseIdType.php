@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace MN\Tests\Joseq\Courses\Infrastructure\Persistence\Doctrine;
+namespace MN\JoseQ\Courses\Infrastructure\Doctrine;
 
 
 use MN\JoseQ\Courses\Domain\CourseId;
@@ -14,7 +14,7 @@ final class CourseIdType extends UuidType
 
     public static function customTypeName(): string
     {
-       return 'course_id';
+        return 'course_id';
     }
 
     protected function typeClassName(): string

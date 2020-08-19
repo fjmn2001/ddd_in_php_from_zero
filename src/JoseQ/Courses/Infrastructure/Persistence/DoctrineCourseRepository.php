@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace MN\Tests\Joseq\Courses\Infrastructure\Persistence;
+namespace MN\JoseQ\Courses\Infrastructure\Persistence;
 
 
 use MN\JoseQ\Courses\Domain\Course;
@@ -21,6 +21,6 @@ final class DoctrineCourseRepository extends DoctrineRepository implements Cours
 
     public function search(CourseId $id): ?Course
     {
-       return $this->repository(Course::class)->find($id);
+        return $this->repository(Course::class)->find($id);
     }
 }
