@@ -12,7 +12,7 @@ use MN\Shared\Infrastructure\Doctrine\DoctrineEntityManagerFactory;
 
 final class FranciscoEntityManagerFactory
 {
-    private const SCHEMA_PATH = __DIR__ . '/../../../../../database/francisco.sql';
+    private const SCHEMA_PATH = __DIR__ . '/../../../../../databases/francisco.sql';
 
     public static function create(array $parameters, string $environment): EntityManagerInterface
     {
