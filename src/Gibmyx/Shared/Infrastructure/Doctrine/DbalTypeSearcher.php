@@ -6,6 +6,7 @@ declare(strict_types=1);
 namespace MN\Gibmyx\Shared\Infrastructure\Doctrine;
 
 
+use MN\Shared\Domain\Utils;
 use function Lambdish\Phunctional\filter;
 use function Lambdish\Phunctional\map;
 use function Lambdish\Phunctional\reduce;
