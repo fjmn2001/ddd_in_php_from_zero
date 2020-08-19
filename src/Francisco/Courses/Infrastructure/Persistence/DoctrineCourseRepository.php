@@ -1,16 +1,20 @@
 <?php
 
+
 declare(strict_types=1);
 
-namespace MN\Christian\Courses\Infrastructure\Persistence;
 
-use MN\Christian\Courses\Domain\Course;
-use MN\Christian\Courses\Domain\CourseId;
-use MN\Christian\Courses\Domain\CourseRepository;
+namespace MN\Francisco\Courses\Infrastructure\Persistence;
+
+
+use MN\Francisco\Courses\Domain\Course;
+use MN\Francisco\Courses\Domain\CourseId;
+use MN\Francisco\Courses\Domain\CourseRepository;
 use MN\Shared\Infrastructure\Persistence\Doctrine\DoctrineRepository;
 
 final class DoctrineCourseRepository extends DoctrineRepository implements CourseRepository
 {
+
     public function save(Course $course): void
     {
         $this->persist($course);
