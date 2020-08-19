@@ -9,7 +9,7 @@ namespace MN\Shared\Domain\ValueObject;
 
 class StringValueObject
 {
-    private $value;
+    protected $value;
 
     public function __construct(string $value)
     {
