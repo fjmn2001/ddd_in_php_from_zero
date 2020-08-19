@@ -18,7 +18,7 @@ class PereiraEntityManagerFactory
             $isDevMode = 'prod' !== $environment;
 
             $prefixes = array_merge(
-                DoctrinePrefixesSearcher::inPath(__DIR__.'/../../../../Pereira/','MN/Pereira')
+                DoctrinePrefixesSearcher::inPath(__DIR__.'/../../../../Pereira','MN\Pereira')
             );
 
             $dbalCustomTypesClasses = DbalTypeSearcher::inPath(__DIR__ . '/../../../../Pereira', 'Pereira');
