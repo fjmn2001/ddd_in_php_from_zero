@@ -5,6 +5,5 @@ imports:
   - tests/apps/daniel/backend/daniel_backend.yml
   - tests/apps/gabriel/backend/gabriel_backend.yml
   - tests/apps/francisco/backend/francisco_backend.yml
-  - tests/apps/nelson/backend/nelson_backend.yml
   - tests/apps/christian/backend/christian_backend.yml
   - tests/apps/pereira/backend/pereira_backend.yml

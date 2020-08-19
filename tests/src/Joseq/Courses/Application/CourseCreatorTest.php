@@ -11,31 +11,29 @@ namespace MN\Tests\Joseq\Courses\Application;
 
 use MN\JoseQ\Courses\Application\CourseCreator;
 use MN\JoseQ\Courses\Application\CreateCourseRequest;
-use MN\JoseQ\Courses\Domain\Course;
-use MN\JoseQ\Courses\Domain\CourseDuration;
-use MN\JoseQ\Courses\Domain\CourseId;
-use MN\JoseQ\Courses\Domain\CourseName;
-use MN\JoseQ\Courses\Domain\CourseRepository;
-use PHPUnit\Framework\TestCase;
+use MN\Tests\Joseq\Courses\CoursesModuleUnitTestCase;
+use MN\Tests\Joseq\Courses\Domain\CourseMother;
 
-class CourseCreatorTest extends TestCase
+
+class CourseCreatorTest extends CoursesModuleUnitTestCase
 {
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
     /**
-    @test
-    */
+     * @test
+     */
     public function it_should_create_a_valid_course(): void
     {
-        $repository = $this->createMock(CourseRepository::class);
-        $creator = new  CourseCreator($repository);
+        $course = CourseMother::random();
+        $this->shouldSave($course);
 
-        $course_id = CourseId::random();
-        $name= 'some_name';
-        $duration= 'some_duration';
-
-        $course = new Course(new CourseId($course_id->value()), new CourseName($name), new CourseDuration($duration));
-
-        $repository->method('save')->with($course);
-
-        $creator->__invoke(new CreateCourseRequest($course_id->value(), $name, $duration));
+        $this->courseCreator()->__invoke(new CreateCourseRequest(
+            $course->id()->value(),
+            $course->name()->value(),
+            $course->duration()->value()
+        ));
     }
 }

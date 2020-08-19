@@ -49,9 +49,6 @@
             "MN\\Apps\\Gabriel\\Backend\\": "apps/gabriel/backend/src",
             "MN\\Apps\\Gabriel\\Frontend\\": "apps/gabriel/frontend/src",
 
-            "MN\\Apps\\Nelson\\Backend\\": "apps/nelson/backend/src",
-            "MN\\Apps\\Nelson\\Frontend\\": "apps/nelson/frontend/src",
-
             "MN\\Apps\\Christian\\Backend\\": "apps/christian/backend/src",
             "MN\\Apps\\Christian\\Frontend\\": "apps/christian/frontend/src",
 

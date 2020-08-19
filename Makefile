@@ -11,13 +11,12 @@ start-local-gibmyx:
 start-local-daniel:
 	php -S localhost:8092 apps/daniel/backend/public/index.php
 
+start-local-christian:
+	php -S localhost:8092 apps/christian/backend/public/index.php
+
 start-local-francisco:
 	php -S localhost:8092 apps/francisco/backend/public/index.php
 
 start-local-gabriel:
 	php -S localhost:8092 apps/gabriel/backend/public/index.php
-
-start-local-christian:
-    php -S localhost:8092 apps/christian/backend/public/index.php
-
 
