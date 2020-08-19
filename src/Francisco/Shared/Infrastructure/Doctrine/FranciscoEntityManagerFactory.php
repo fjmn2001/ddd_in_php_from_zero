@@ -8,6 +8,7 @@ namespace MN\Francisco\Shared\Infrastructure\Doctrine;
 
 
 use Doctrine\ORM\EntityManagerInterface;
+use MN\Shared\Infrastructure\Doctrine\DoctrineEntityManagerFactory;
 
 final class FranciscoEntityManagerFactory
 {
