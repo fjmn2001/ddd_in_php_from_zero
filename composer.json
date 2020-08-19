@@ -19,7 +19,8 @@
         "ramsey/uuid": "^4.1",
         "doctrine/dbal": "^2.10",
         "doctrine/orm": "^2.7",
-        "wouterj/eloquent-bundle": "^1.1"
+        "wouterj/eloquent-bundle": "^1.1",
+        "lambdish/phunctional": "^2.0"
     },
     "require-dev": {
         "behat/behat": "^3.5",
