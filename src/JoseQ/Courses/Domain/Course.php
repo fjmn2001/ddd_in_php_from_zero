@@ -9,7 +9,9 @@
 namespace MN\JoseQ\Courses\Domain;
 
 
-class Course
+use MN\Shared\Domain\Bus\Event\DomainEvent\AggregateRoot;
+
+class Course extends AggregateRoot
 {
 
     private $id;
