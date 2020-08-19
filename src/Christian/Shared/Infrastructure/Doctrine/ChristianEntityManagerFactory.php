@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace MN\Christian\Shared\Infrastructure\Doctrine;
 
+use MN\Shared\Infrastructure\Doctrine\DoctrineEntityManagerFactory;
+
 final class ChristianEntityManagerFactory
 {
     private const SCHEMA_PATH = __DIR__. '/../../../../../database/christian.sql';
