@@ -1,18 +1,25 @@
 <?php
 
+
 declare(strict_types=1);
 
-namespace MN\Christian\Shared\Infrastructure\Doctrine;
+
+namespace MN\Francisco\Shared\Infrastructure\Doctrine;
 
 
-class DbalTypeSearcher
+use MN\Shared\Domain\Utils;
+use function Lambdish\Phunctional\filter;
+use function Lambdish\Phunctional\map;
+use function Lambdish\Phunctional\reduce;
+
+final class DbalTypeSearcher
 {
     private const MAPPINGS_PATH = 'Infrastructure/Persistence/Doctrine';
 
     public static function inPath(string $path, string $contextName): array
     {
         $possibleDbalDirectories = self::possibleDbalPaths($path);
-        $dbalDirectories         = filter(self::isExistingDbalPath(), $possibleDbalDirectories);
+        $dbalDirectories = filter(self::isExistingDbalPath(), $possibleDbalDirectories);
 
         return reduce(self::dbalClassesSearcher($contextName), $dbalDirectories, []);
     }
@@ -57,7 +64,7 @@ class DbalTypeSearcher
     {
         return static function (array $totalNamespaces, string $path) use ($contextName) {
             $possibleFiles = scandir($path);
-            $files         = filter(
+            $files = filter(
                 static function ($file) {
                     return Utils::endsWith('Type.php', $file);
                 },
@@ -66,7 +73,7 @@ class DbalTypeSearcher
 
             $namespaces = map(
                 static function (string $file) use ($path, $contextName) {
-                    $fullPath     = "$path/$file";
+                    $fullPath = "$path/$file";
                     $splittedPath = explode("/src/$contextName/", $fullPath);
 
                     $classWithoutPrefix = str_replace(['.php', '/'], ['', '\\'], $splittedPath[1]);
