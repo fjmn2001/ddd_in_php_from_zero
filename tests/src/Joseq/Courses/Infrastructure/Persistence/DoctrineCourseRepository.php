@@ -9,8 +9,9 @@ namespace MN\Tests\Joseq\Courses\Infrastructure\Persistence;
 use MN\JoseQ\Courses\Domain\Course;
 use MN\JoseQ\Courses\Domain\CourseId;
 use MN\JoseQ\Courses\Domain\CourseRepository;
+use MN\Shared\Infrastructure\Persistence\Doctrine\DoctrineRepository;
 
-final class DoctrineCourseRepository implements CourseRepository
+final class DoctrineCourseRepository extends DoctrineRepository implements CourseRepository
 {
 
     public function save(Course $course): void
