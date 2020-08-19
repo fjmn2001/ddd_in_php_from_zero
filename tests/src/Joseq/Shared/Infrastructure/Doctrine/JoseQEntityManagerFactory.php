@@ -7,6 +7,7 @@ namespace MN\Tests\Joseq\Shared\Infrastructure\Doctrine;
 
 
 use Doctrine\ORM\EntityManagerInterface;
+use MN\Shared\Infrastructure\Doctrine\DoctrineEntityManagerFactory;
 
 final class JoseQEntityManagerFactory
 {
@@ -21,7 +22,7 @@ final class JoseQEntityManagerFactory
 
         $dbalCustomTypeClasses = DbalTypeSearcher::inPath(__DIR__ . '/../../../../Joseq', 'Joseq');
 
-        return DoctrineManagerFactory::create(
+        return DoctrineEntityManagerFactory::create(
             $parameters,
             $prefixes,
             $isDevMode,
