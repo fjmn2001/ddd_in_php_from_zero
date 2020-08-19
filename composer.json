@@ -16,19 +16,23 @@
         "symfony/framework-bundle": "^4.3",
         "symfony/dotenv": "^4.3",
         "symfony/yaml": "^4.3",
-        "ramsey/uuid": "^3.9"
+        "ramsey/uuid": "^4.1"
     },
     "require-dev": {
         "behat/behat": "^3.5",
         "behat/mink-extension": "^2.3",
         "behat/mink-browserkit-driver": "^1.3",
         "friends-of-behat/symfony-extension": "^2.0",
-        "phpunit/phpunit": "^7.5"
+        "phpunit/phpunit": "^7.5",
+        "fzaninotto/faker": "^1.9"
     },
     "autoload": {
         "psr-4": {
             "MN\\Apps\\Ddd\\Backend\\": "apps/ddd/backend/src",
             "MN\\Apps\\Ddd\\Frontend\\": "apps/ddd/frontend/src",
+
+            "MN\\Apps\\Pereira\\Backend\\": "apps/pereira/backend/src",
+            "MN\\Apps\\Pereira\\Frontend\\": "apps/pereira/frontend/src",
 
             "MN\\Apps\\JoseQ\\Backend\\": "apps/joseq/backend/src",
             "MN\\Apps\\JoseQ\\Frontend\\": "apps/joseq/frontend/src",
@@ -44,6 +48,9 @@
 
             "MN\\Apps\\Gabriel\\Backend\\": "apps/gabriel/backend/src",
             "MN\\Apps\\Gabriel\\Frontend\\": "apps/gabriel/frontend/src",
+
+            "MN\\Apps\\Nelson\\Backend\\": "apps/nelson/backend/src",
+            "MN\\Apps\\Nelson\\Frontend\\": "apps/nelson/frontend/src",
 
             "MN\\Apps\\Christian\\Backend\\": "apps/christian/backend/src",
             "MN\\Apps\\Christian\\Frontend\\": "apps/christian/frontend/src",
