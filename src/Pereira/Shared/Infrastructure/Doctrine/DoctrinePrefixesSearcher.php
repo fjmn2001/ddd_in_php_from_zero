@@ -1,20 +1,24 @@
 <?php
 
 
+declare(strict_types=1);
+
+
 namespace MN\Pereira\Shared\Infrastructure\Doctrine;
+
 
 use function Lambdish\Phunctional\filter;
 use function Lambdish\Phunctional\map;
 use function Lambdish\Phunctional\reindex;
 
-class DoctrinePrefixesSearcher
+final class DoctrinePrefixesSearcher
 {
     private const MAPPINGS_PATH = 'Infrastructure/Persistence/Doctrine';
 
     public static function inPath(string $path, string $baseNamespace): array
     {
         $possibleMappingDirectories = self::possibleMappingPaths($path);
-        $mappingDirectories         = filter(self::isExistingMappingPath(), $possibleMappingDirectories);
+        $mappingDirectories = filter(self::isExistingMappingPath(), $possibleMappingDirectories);
 
         return array_flip(reindex(self::namespaceFormatter($baseNamespace), $mappingDirectories));
     }

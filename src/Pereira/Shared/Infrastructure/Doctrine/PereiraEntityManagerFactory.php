@@ -7,6 +7,7 @@ namespace MN\Pereira\Shared\Infrastructure\Doctrine;
 
 
 use Doctrine\ORM\EntityManagerInterface;
+use MN\Shared\Infrastructure\Doctrine\DoctrineEntityManagerFactory;
 
 class PereiraEntityManagerFactory
 {
