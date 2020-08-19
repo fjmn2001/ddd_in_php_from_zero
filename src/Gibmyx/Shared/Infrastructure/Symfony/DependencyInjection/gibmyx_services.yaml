@@ -16,4 +16,4 @@ services:
 
 
   # Courses
-  CodelyTv\Mooc\Courses\Domain\CourseRepository: '@MN\Gibmyx\Courses\Infrastructure\Persistence\DoctrineCourseRepository'
+  MN\Gibmyx\Courses\Domain\CourseRepository: '@MN\Gibmyx\Courses\Infrastructure\Persistence\DoctrineCourseRepository'
