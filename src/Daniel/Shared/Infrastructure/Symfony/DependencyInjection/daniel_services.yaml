@@ -1,7 +1,7 @@
 services:
   # Databases
   Doctrine\ORM\EntityManager:
-    factory: [MN\Daniel\Shared\Infrastructure\Doctrine\MoocEntityManagerFactory, create]
+    factory: [MN\Daniel\Shared\Infrastructure\Doctrine\DanielEntityManagerFactory, create]
     arguments:
       - driver:   '%env(MOOC_DATABASE_DRIVER)%'
         host:     '%env(MOOC_DATABASE_HOST)%'
