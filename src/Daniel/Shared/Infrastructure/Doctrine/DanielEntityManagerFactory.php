@@ -7,10 +7,11 @@ namespace MN\Daniel\Shared\Infrastructure\Doctrine;
 
 
 use Doctrine\ORM\EntityManagerInterface;
+use MN\Shared\Infrastructure\Doctrine\DoctrineEntityManagerFactory;
 
 final class DanielEntityManagerFactory
 {
-    private const SCHEMA_PATH = __DIR__ . '/../../../../../database/daniel.sql';
+    private const SCHEMA_PATH = __DIR__ . '/../../../../../databases/daniel.sql';
 
     public static function create(array $parameters, string $environment): EntityManagerInterface
     {

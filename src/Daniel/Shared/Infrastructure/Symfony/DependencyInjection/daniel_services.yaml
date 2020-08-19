@@ -1,0 +1,19 @@
+services:
+  # Databases
+  Doctrine\ORM\EntityManager:
+    factory: [MN\Daniel\Shared\Infrastructure\Doctrine\MoocEntityManagerFactory, create]
+    arguments:
+      - driver:   '%env(MOOC_DATABASE_DRIVER)%'
+        host:     '%env(MOOC_DATABASE_HOST)%'
+        port:     '%env(MOOC_DATABASE_PORT)%'
+        dbname:   '%env(MOOC_DATABASE_NAME)%'
+        user:     '%env(MOOC_DATABASE_USER)%'
+        password: '%env(MOOC_DATABASE_PASSWORD)%'
+      - '%env(APP_ENV)%'
+    tags:
+      - { name: mn.database_connection }
+    public: true
+
+
+  # Courses
+  MN\Daniel\Courses\Domain\CourseRepository: '@MN\Daniel\Courses\Infrastructure\Persistence\DoctrineCourseRepository'

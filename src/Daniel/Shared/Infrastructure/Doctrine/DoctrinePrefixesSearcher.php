@@ -6,6 +6,10 @@ declare(strict_types=1);
 namespace MN\Daniel\Shared\Infrastructure\Doctrine;
 
 
+use function Lambdish\Phunctional\filter;
+use function Lambdish\Phunctional\map;
+use function Lambdish\Phunctional\reindex;
+
 final class DoctrinePrefixesSearcher
 {
     private const MAPPINGS_PATH = 'Infrastructure/Persistence/Doctrine';
