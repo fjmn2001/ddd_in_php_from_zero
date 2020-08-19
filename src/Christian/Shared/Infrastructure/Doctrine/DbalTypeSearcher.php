@@ -6,6 +6,9 @@ namespace MN\Christian\Shared\Infrastructure\Doctrine;
 
 
 use MN\Shared\Domain\Utils;
+use function Lambdish\Phunctional\filter;
+use function Lambdish\Phunctional\map;
+use function Lambdish\Phunctional\reduce;
 
 class DbalTypeSearcher
 {
