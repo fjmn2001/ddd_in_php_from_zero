@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 
-namespace MN\Tests\Joseq\Shared\Infrastructure\Doctrine;
-
+namespace MN\JoseQ\Shared\Infrastructure\Doctrine;
 
 use MN\Shared\Domain\Utils;
 use function Lambdish\Phunctional\filter;

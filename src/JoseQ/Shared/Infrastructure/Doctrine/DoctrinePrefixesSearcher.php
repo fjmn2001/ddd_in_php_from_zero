@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 
-namespace MN\Tests\Joseq\Shared\Infrastructure\Doctrine;
-
+namespace MN\JoseQ\Shared\Infrastructure\Doctrine;
 
 use function Lambdish\Phunctional\filter;
 use function Lambdish\Phunctional\map;
@@ -17,7 +16,7 @@ final class DoctrinePrefixesSearcher
     public static function inPath(string $path, string $baseNamespace): array
     {
         $possibleMappingDirectories = self::possibleMappingPaths($path);
-        $mappingDirectories         = filter(self::isExistingMappingPath(), $possibleMappingDirectories);
+        $mappingDirectories = filter(self::isExistingMappingPath(), $possibleMappingDirectories);
 
         return array_flip(reindex(self::namespaceFormatter($baseNamespace), $mappingDirectories));
     }

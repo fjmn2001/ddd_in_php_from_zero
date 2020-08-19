@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 
-namespace MN\Tests\Joseq\Shared\Infrastructure\Doctrine;
-
+namespace MN\JoseQ\Shared\Infrastructure\Doctrine;
 
 use Doctrine\ORM\EntityManagerInterface;
 use MN\Shared\Infrastructure\Doctrine\DoctrineEntityManagerFactory;
