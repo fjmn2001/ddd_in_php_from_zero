@@ -1,4 +1,0 @@
-courses_put:
-  path: /courses/{id}
-  controller: MN\Apps\Nelson\Backend\Controller\Courses\CoursesPutController
-  methods:  [PUT]
