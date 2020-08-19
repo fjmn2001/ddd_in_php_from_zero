@@ -11,7 +11,7 @@ use MN\Shared\Infrastructure\Doctrine\DoctrineEntityManagerFactory;
 
 final class GabrielEntityManagerFactory
 {
-        private const SCHEMA_PATH = __DIR__ . '/../../../../../gabriel.sql';
+        private const SCHEMA_PATH = __DIR__ . '/../../../../../databases/gabriel.sql';
 
         public static function create(array $parameters, string $environment): EntityManagerInterface
         {
