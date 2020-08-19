@@ -8,6 +8,7 @@ namespace MN\Pereira\Courses\Infrastructure;
 
 
 use MN\Pereira\Courses\Domain\Course;
+use MN\Pereira\Courses\Domain\CourseId;
 use MN\Pereira\Courses\Domain\CourseRepository;
 
 final class FileCourseRepository implements CourseRepository
@@ -16,13 +17,13 @@ final class FileCourseRepository implements CourseRepository
 
     public function save(Course $course): void
     {
-        file_put_contents($this->fileName($course->id()), serialize($course));
+        file_put_contents($this->fileName($course->id()->value()), serialize($course));
     }
 
-    public function search(string $id): ?Course
+    public function search(CourseId $id): ?Course
     {
-        return file_exists($this->fileName($id))
-            ? unserialize(file_get_contents($this->fileName($id)))
+        return file_exists($this->fileName($id->value()))
+            ? unserialize(file_get_contents($this->fileName($id->value())))
             : null;
     }
 
