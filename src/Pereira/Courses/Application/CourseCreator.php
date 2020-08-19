@@ -7,10 +7,10 @@ declare(strict_types=1);
 namespace MN\Pereira\Courses\Application;
 
 
-use MN\Pereira\Courses\Application\CreateCourseRequest;
-use MN\Pereira\Courses\Domain\CourseDuration;
-
 use MN\Pereira\Courses\Domain\Course;
+use MN\Pereira\Courses\Domain\CourseDuration;
+use MN\Pereira\Courses\Domain\CourseId;
+use MN\Pereira\Courses\Domain\CourseName;
 use MN\Pereira\Courses\Domain\CourseRepository;
 
 final class CourseCreator
