@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace MN\Gabriel\Courses\Domain;
 
 
-final class Course
+use MN\Shared\Domain\Bus\Event\DomainEvent\AggregateRoot;
+
+final class Course extends AggregateRoot
 {
 
     private $id;
