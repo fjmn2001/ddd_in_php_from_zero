@@ -7,12 +7,13 @@ namespace MN\Gabriel\Shared\Infrastructure\Doctrine;
 
 
 use Doctrine\ORM\EntityManagerInterface;
+use MN\Shared\Infrastructure\Doctrine\DoctrineEntityManagerFactory;
 
 final class GabrielEntityManagerFactory
 {
         private const SCHEMA_PATH = __DIR__ . '/../../../../../gabriel.sql';
 
-        public static function create(array $paremeters, string $environment): EntityManagerInterface
+        public static function create(array $parameters, string $environment): EntityManagerInterface
         {
             $isDevMode = 'prod' !== $environment;
 
@@ -21,6 +22,7 @@ final class GabrielEntityManagerFactory
             );
 
             $dbalCustomTypesClasses = DbalTypeSearcher::inPath(__DIR__ . '/../../../../Gabriel', 'Francisco');
+
 
             return DoctrineEntityManagerFactory::create(
                 $parameters,
