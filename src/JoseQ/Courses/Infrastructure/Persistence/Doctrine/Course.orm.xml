@@ -4,11 +4,11 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="MN\Joseq\Courses\Domain\Course" table="courses">
+    <entity name="MN\JoseQ\Courses\Domain\Course" table="courses">
         <id name="id" type="course_id" column="id" length="36" />
 
-        <embedded name="name" class="MN\Joseq\Courses\Domain\CourseName" use-column-prefix="false" />
-        <embedded name="duration" class="MN\Joseq\Courses\Domain\CourseDuration" use-column-prefix="false" />
+        <embedded name="name" class="MN\JoseQ\Courses\Domain\CourseName" use-column-prefix="false" />
+        <embedded name="duration" class="MN\JoseQ\Courses\Domain\CourseDuration" use-column-prefix="false" />
     </entity>
 
 </doctrine-mapping>

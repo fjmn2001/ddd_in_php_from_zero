@@ -3,8 +3,7 @@
 declare(strict_types=1);
 
 
-namespace MN\JoseQ\Courses\Infrastructure\Doctrine;
-
+namespace MN\JoseQ\Courses\Infrastructure\Persistence\Doctrine;
 
 use MN\JoseQ\Courses\Domain\CourseId;
 use MN\Shared\Infrastructure\Persistence\Doctrine\UuidType;
