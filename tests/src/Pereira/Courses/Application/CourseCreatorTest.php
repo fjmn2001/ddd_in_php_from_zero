@@ -8,27 +8,33 @@ namespace MN\Tests\Pereira\Courses\Application;
 
 
 use MN\Pereira\Courses\Application\CourseCreator;
-use MN\Pereira\Courses\Domain\Course;
-use MN\Pereira\Courses\Domain\CourseRepository;
-use PHPUnit\Framework\TestCase;
+use MN\Pereira\Courses\Application\CreateCourseRequest;
+use MN\Tests\Pereira\Courses\CoursesModuleUnitTestCase;
+use MN\Tests\Pereira\Courses\Domain\CourseMother;
 
-final class CourseCreatorTest extends TestCase
+final class CourseCreatorTest extends CoursesModuleUnitTestCase
 {
+    private $creator;
+
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->creator = new CourseCreator($this->repository());
+    }
+
     /**
      * @test
      */
     public function it_should_create_a_valid_course(): void
     {
-        $repository = $this->createMock(CourseRepository::class);
-        $creator = new CourseCreator($repository);
+        $course = CourseMother::random();
+        $this->shouldSave($course);
 
-        $id = 'some-id';
-        $name = 'some-name';
-        $duration = 'some-duration';
-
-        $course = new Course($id, $name, $duration);
-        $repository->method('save')->with($course);
-
-        $creator->__invoke($id, $name, $duration);
+        $this->creator->__invoke(new CreateCourseRequest(
+            $course->id()->value(),
+            $course->name()->value(),
+            $course->duration()->value()
+        ));
     }
+
 }
