@@ -18,10 +18,10 @@ final class GabrielEntityManagerFactory
             $isDevMode = 'prod' !== $environment;
 
             $prefixes = array_merge(
-                DoctrinePrefixesSearcher::inPath(__DIR__ . '/../../../../Gabriel', 'MN\Francisco')
+                DoctrinePrefixesSearcher::inPath(__DIR__ . '/../../../../Gabriel', 'MN\Gabriel')
             );
 
-            $dbalCustomTypesClasses = DbalTypeSearcher::inPath(__DIR__ . '/../../../../Gabriel', 'Francisco');
+            $dbalCustomTypesClasses = DbalTypeSearcher::inPath(__DIR__ . '/../../../../Gabriel', 'Gabriel');
 
 
             return DoctrineEntityManagerFactory::create(
