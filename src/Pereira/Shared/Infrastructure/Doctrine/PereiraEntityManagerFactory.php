@@ -11,7 +11,7 @@ use MN\Shared\Infrastructure\Doctrine\DoctrineEntityManagerFactory;
 
 class PereiraEntityManagerFactory
 {
-        private const SCHEMA_PATH=__DIR__.'/../../../../../data/pereira.sql';
+        private const SCHEMA_PATH=__DIR__.'/../../../../../databases/pereira.sql';
 
         public static function create(array $parameters, string $environment): EntityManagerInterface
         {
