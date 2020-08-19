@@ -1,4 +1,4 @@
 health-check_get:
   path: /health-check
-  controller: MN\Apps\Plereira\Backend\Controller\HealthCheck\HealthCheckGetController
+  controller: MN\Apps\Pereira\Backend\Controller\HealthCheck\HealthCheckGetController
   methods:  [GET]
