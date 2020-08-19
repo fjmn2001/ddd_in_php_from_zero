@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace MN\Christian\Shared\Infrastructure\Doctrine;
 
 
+use MN\Shared\Domain\Utils;
+
 class DbalTypeSearcher
 {
     private const MAPPINGS_PATH = 'Infrastructure/Persistence/Doctrine';
