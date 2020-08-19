@@ -12,7 +12,7 @@ final class Course
     private $name;
     private $duration;
 
-    public function __construct(CourseId $id, CourseName $name, CourseDuracion $duration)
+    public function __construct(CourseId $id, CourseName $name, CourseDuration $duration)
     {
         $this->id = $id;
         $this->name = $name;
@@ -29,7 +29,7 @@ final class Course
         return $this->name;
     }
 
-    public function duration(): CourseDuracion
+    public function duration(): CourseDuration
     {
         return $this->duration;
     }

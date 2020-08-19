@@ -10,7 +10,7 @@ namespace MN\Tests\Gabriel\Courses\Application;
 use MN\Gabriel\Courses\Application\CourseCreator;
 use MN\Gabriel\Courses\Application\CreateCourseRequest;
 use MN\Gabriel\Courses\Domain\Course;
-use MN\Gabriel\Courses\Domain\CourseDuracion;
+use MN\Gabriel\Courses\Domain\CourseDuration;
 use MN\Gabriel\Courses\Domain\CourseId;
 use MN\Gabriel\Courses\Domain\CourseName;
 use MN\Gabriel\Courses\Domain\CourseRepository;
@@ -30,7 +30,7 @@ final class CourseCreatorTest extends TestCase
         $name = 'some-name';
         $duration = 'some-duration';
 
-        $course = new Course(new CourseId($course_id->value()), new CourseName($name), new CourseDuracion($duration));
+        $course = new Course(new CourseId($course_id->value()), new CourseName($name), new CourseDuration($duration));
         $repository->method('save')->with($course);
 
         $creator->__invoke(new CreateCourseRequest($course_id->value(), $name, $duration));

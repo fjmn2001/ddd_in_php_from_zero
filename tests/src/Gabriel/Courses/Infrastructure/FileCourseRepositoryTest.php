@@ -8,7 +8,7 @@ namespace MN\Tests\Gabriel\Courses\Infrastructure;
 
 
 use MN\Gabriel\Courses\Domain\Course;
-use MN\Gabriel\Courses\Domain\CourseDuracion;
+use MN\Gabriel\Courses\Domain\CourseDuration;
 use MN\Gabriel\Courses\Domain\CourseId;
 use MN\Gabriel\Courses\Domain\CourseName;
 use MN\Gabriel\Courses\Infrastructure\FileCourseRepository;
@@ -23,7 +23,7 @@ final class FileCourseRepositoryTest extends TestCase
     public function it_should_save_a_course(): void
     {
         $repository = new FileCourseRepository();
-        $course = new Course(new CourseId(CourseId::random()->value()), new CourseName('name'), new CourseDuracion('duration'));
+        $course = new Course(new CourseId(CourseId::random()->value()), new CourseName('name'), new CourseDuration('duration'));
 
         $repository->save($course);
     }
@@ -35,7 +35,7 @@ final class FileCourseRepositoryTest extends TestCase
     {
         $course_id = CourseId::random();
         $repository = new FileCourseRepository();
-        $course = new Course(new CourseId($course_id->value()),  new CourseName('name'), new CourseDuracion('duration'));
+        $course = new Course(new CourseId($course_id->value()),  new CourseName('name'), new CourseDuration('duration'));
 
         $repository->save($course);
 

@@ -6,7 +6,7 @@ declare(strict_types=1);
 namespace MN\Gabriel\Courses\Application;
 
 
-use MN\Gabriel\Courses\Domain\CourseDuracion;
+use MN\Gabriel\Courses\Domain\CourseDuration;
 use MN\Gabriel\Courses\Domain\CourseId;
 use MN\Gabriel\Courses\Domain\CourseName;
 use MN\Gabriel\Courses\Domain\CourseRepository;
@@ -23,7 +23,7 @@ class CourseCreator
     }
     public function __invoke(CreateCourseRequest $request): void
     {
-        $course = new Course(new CourseId($request->id()), new CourseName($request->name()), new CourseDuracion($request->duration()));
+        $course = new Course(new CourseId($request->id()), new CourseName($request->name()), new CourseDuration($request->duration()));
 
         $this->repository->save($course);
     }
