@@ -6,34 +6,30 @@ declare(strict_types=1);
 namespace MN\Tests\Daniel\Courses\Application;
 
 
-use MN\Daniel\Courses\Application\CourseCreator;
 use MN\Daniel\Courses\Application\CreateCourseRequest;
-use MN\Daniel\Courses\Domain\Course;
-use MN\Daniel\Courses\Domain\CourseDuration;
-use MN\Daniel\Courses\Domain\CourseId;
-use MN\Daniel\Courses\Domain\CourseName;
-use MN\Daniel\Courses\Domain\CourseRepository;
-use PHPUnit\Framework\TestCase;
+use MN\Tests\Daniel\Courses\CourseModuleUnitCaseTest;
+use MN\Tests\Daniel\Courses\Domain\CourseMother;
 
-final class CourseCreatorTest extends TestCase
+final class CourseCreatorTest extends CourseModuleUnitCaseTest
 {
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
     /**
     *@test
     */
     public function it_should_create_a_valid_course(): void
     {
-        $repository = $this->createMock(CourseRepository::class);
-        $creator = new CourseCreator($repository);
+        $course = CourseMother::random();
+        $this->shouldSave($course);
 
-        $course_id = CourseId::random();
-        $name = "some-name";
-        $duration = "some-duration";
-
-        $course = new Course(new CourseId($course_id->value()),
-                            new CourseName($name),
-                            new CourseDuration($duration));
-        $repository->method('save')->with($course);
-
-        $creator->__invoke(new CreateCourseRequest($course_id->value(), $name, $duration));
+        $this->creator()->__invoke(new CreateCourseRequest(
+            $course->id()->value(),
+            $course->name()->value(),
+            $course->duration()->value()
+        ));
     }
+
 }
