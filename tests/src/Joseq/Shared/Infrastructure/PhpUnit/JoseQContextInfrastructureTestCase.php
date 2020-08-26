@@ -7,6 +7,7 @@ namespace MN\Tests\Joseq\Shared\Infrastructure\PhpUnit;
 
 
 use Doctrine\ORM\EntityManager;
+use MN\Apps\JoseQ\Backend\JoseQBackendKernel;
 use MN\Tests\Shared\Infrastructure\PhpUnit\InfrastructureTestCase;
 
 class JoseQContextInfrastructureTestCase extends InfrastructureTestCase
@@ -19,8 +20,16 @@ class JoseQContextInfrastructureTestCase extends InfrastructureTestCase
         $arranger->arrange();
     }
 
+    protected function tearDown(): void
+    {
+        $arranger = new JoseQEnvironmentArranger($this->service(EntityManager::class));
+        $arranger->close();
+
+        parent::tearDown();
+    }
+
     protected function kernelClass(): string
     {
-        // TODO: Implement kernelClass() method.
+        return JoseQBackendKernel::class;
     }
 }

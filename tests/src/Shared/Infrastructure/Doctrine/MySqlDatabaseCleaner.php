@@ -30,7 +30,10 @@ final class MySqlDatabaseCleaner
 
     private function truncateTableSql(): callable
     {
-        return fn(array $table): string => sprintf('TRUNCATE TABLE `%s`;', first($table));
+        return function(array $table): string
+        {
+            return sprintf('TRUNCATE TABLE `%s`;', first($table));
+        };
     }
 
     private function tables(Connection $connection): array
