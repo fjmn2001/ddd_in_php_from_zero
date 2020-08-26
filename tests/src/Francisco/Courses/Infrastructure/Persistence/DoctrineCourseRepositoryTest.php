@@ -19,6 +19,7 @@ final class DoctrineCourseRepositoryTest extends CoursesModuleInfrastructureTest
     {
         $course = CourseMother::random();
         $this->doctrineRepository()->save($course);
+        $this->clearUnitOfWork();
     }
 
     /**
@@ -29,6 +30,7 @@ final class DoctrineCourseRepositoryTest extends CoursesModuleInfrastructureTest
         $course = CourseMother::random();
         $this->doctrineRepository()->save($course);
         $this->assertEquals($course, $this->repository()->search($course->id()));
+        $this->clearUnitOfWork();
     }
 
     /**
