@@ -7,6 +7,7 @@ namespace MN\Tests\Gibmyx\Shared\Infrastructure\PhpUnit;
 
 
 use Doctrine\ORM\EntityManager;
+use MN\Apps\Gibmyx\Backend\GibmyxBackendKernel;
 use MN\Tests\Shared\Infrastructure\PhpUnit\InfrastructureTestCase;
 
 abstract class GibmyxContextInfrastructureTestCase extends InfrastructureTestCase
@@ -15,12 +16,19 @@ abstract class GibmyxContextInfrastructureTestCase extends InfrastructureTestCas
     {
         parent::setUp();
         $arranger = new GibmyxEnvironmentArranger($this->service(EntityManager::class));
-
         $arranger->arrange();
+    }
+
+    protected function tearDown(): void
+    {
+        $arranger = new GibmyxEnvironmentArranger($this->service(EntityManager::class));
+        $arranger->close();
+
+        parent::tearDown();
     }
 
     protected function kernelClass(): string
     {
-        // TODO: Implement kernelClass() method.
+        return GibmyxBackendKernel::class;
     }
 }

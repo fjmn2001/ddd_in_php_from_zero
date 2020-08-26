@@ -7,6 +7,7 @@ namespace MN\Tests\Gibmyx\Shared\Infrastructure\PhpUnit;
 
 
 use Doctrine\ORM\EntityManager;
+use MN\Tests\Shared\Infrastructure\Doctrine\MySqlDatabaseCleaner;
 use function Lambdish\Phunctional\apply;
 
 final class GibmyxEnvironmentArranger
