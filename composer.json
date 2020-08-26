@@ -16,11 +16,11 @@
         "symfony/framework-bundle": "^4.3",
         "symfony/dotenv": "^4.3",
         "symfony/yaml": "^4.3",
-        "ramsey/uuid": "^4.1",
-        "doctrine/dbal": "^2.10",
+        "ramsey/uuid": "^3.9 || ^4.1",
+        "doctrine/dbal": "^2.9 || ^2.10",
         "doctrine/orm": "^2.7",
         "wouterj/eloquent-bundle": "^1.1",
-        "lambdish/phunctional": "^2.0"
+        "lambdish/phunctional": "^1.0 || ^2.0"
     },
     "require-dev": {
         "behat/behat": "^3.5",
@@ -50,8 +50,12 @@
             "MN\\Apps\\Francisco\\Backend\\": "apps/francisco/backend/src",
             "MN\\Apps\\Francisco\\Frontend\\": "apps/francisco/frontend/src",
 
+            "MN\\Apps\\Gabriel\\Backend\\": "apps/gabriel/backend/src",
+            "MN\\Apps\\Gabriel\\Frontend\\": "apps/gabriel/frontend/src",
+
             "MN\\Apps\\Christian\\Backend\\": "apps/christian/backend/src",
             "MN\\Apps\\Christian\\Frontend\\": "apps/christian/frontend/src",
+
 
             "MN\\": ["src"]
         }
