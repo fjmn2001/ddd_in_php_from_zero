@@ -17,3 +17,6 @@ start-local-christian:
 start-local-francisco:
 	php -S localhost:8092 apps/francisco/backend/public/index.php
 
+start-local-gabriel:
+	php -S localhost:8092 apps/gabriel/backend/public/index.php
+
