@@ -18,6 +18,25 @@ final class DoctrineCourseRepositoryTest extends CoursesModuleInfrastructureTest
     public function try_it_should_save_a_course()
     {
         $course = CourseMother::random();
-        $this->repository()->save($course);
+        $this->doctrineRepository()->save($course);
+    }
+
+    /**
+     * @test
+     */
+    public function it_should_return_a_existing_course(): void
+    {
+        $course = CourseMother::random();
+        $this->doctrineRepository()->save($course);
+        $this->assertEquals($course, $this->repository()->search($course->id()));
+    }
+
+    /**
+     * @test
+     */
+    public function it_should_not_return_a_existing_course(): void
+    {
+        $course = CourseMother::random();
+        $this->assertNull($this->doctrineRepository()->search($course->id()));
     }
 }
