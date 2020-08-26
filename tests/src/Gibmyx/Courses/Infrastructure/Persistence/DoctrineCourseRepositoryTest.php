@@ -21,6 +21,7 @@ final class DoctrineCourseRepositoryTest extends CourseModuleInfrastrutureTestCa
     {
         $course = CourseMother::random();
         $this->doctrineRepositoyy()->save($course);
+        $this->clearUnitOfWork();
     }
 
     /**
@@ -31,6 +32,7 @@ final class DoctrineCourseRepositoryTest extends CourseModuleInfrastrutureTestCa
         $course = CourseMother::random();
         $this->doctrineRepositoyy()->save($course);
         $this->assertEquals($course, $this->doctrineRepositoyy()->search( $course->id() ));
+        $this->clearUnitOfWork();
     }
 
     /**
@@ -40,5 +42,11 @@ final class DoctrineCourseRepositoryTest extends CourseModuleInfrastrutureTestCa
     {
         $course = CourseMother::random();
         $this->assertNull($this->doctrineRepositoyy()->search( $course->id() ));
+        $this->clearUnitOfWork();
+    }
+
+    public function clearUnitOfWork() :void
+    {
+        //..
     }
 }
