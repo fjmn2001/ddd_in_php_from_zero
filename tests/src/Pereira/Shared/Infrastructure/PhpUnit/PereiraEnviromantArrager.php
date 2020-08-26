@@ -11,7 +11,7 @@ use Doctrine\ORM\EntityManager;
 use MN\Tests\Shared\Infrastructure\Doctrine\MySqlDatabaseCleaner;
 use function Lambdish\Phunctional\apply;
 
-final class PereiraEnvironmentArranger
+final class PereiraEnviromantArrager
 {
     private $entityManager;
 

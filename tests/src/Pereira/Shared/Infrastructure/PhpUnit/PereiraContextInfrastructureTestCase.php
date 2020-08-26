@@ -16,13 +16,13 @@ abstract class PereiraContextInfrastructureTestCase extends InfrastructureTestCa
     protected function setUp(): void
     {
         parent::setUp();
-        $arranger = new PereiraEnvironmentArranger($this->service(EntityManager::class));
+        $arranger = new PereiraEnviromantArrager($this->service(EntityManager::class));
         $arranger->arrange();
     }
 
     protected function tearDown(): void
     {
-        $arranger = new PereiraEnvironmentArranger($this->service(EntityManager::class));
+        $arranger = new PereiraEnviromantArrager($this->service(EntityManager::class));
         $arranger->close();
 
         parent::tearDown();
