@@ -7,7 +7,17 @@ declare(strict_types=1);
 namespace MN\Tests\Francisco\Courses\Infrastructure\Persistence;
 
 
-final class DoctrineCourseRepositoryTest
-{
+use MN\Tests\Francisco\Courses\CoursesModuleInfrastructureTestCase;
+use MN\Tests\Francisco\Courses\Domain\CourseMother;
 
+final class DoctrineCourseRepositoryTest extends CoursesModuleInfrastructureTestCase
+{
+    /**
+     * @test
+     */
+    public function try_it_should_save_a_course()
+    {
+        $course = CourseMother::random();
+        $this->repository()->save($course);
+    }
 }
