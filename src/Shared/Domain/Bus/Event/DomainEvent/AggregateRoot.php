@@ -11,7 +11,7 @@ use MN\Shared\Domain\Bus\Event\DomainEvent;
 
 abstract class AggregateRoot
 {
-    private array $domainEvents = [];
+    private $domainEvents = [];
 
     final public function pullDomainEvents(): array
     {
