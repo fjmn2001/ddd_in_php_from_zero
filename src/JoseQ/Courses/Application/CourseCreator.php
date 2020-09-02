@@ -14,20 +14,28 @@ use MN\JoseQ\Courses\Domain\CourseDuration;
 use MN\JoseQ\Courses\Domain\CourseId;
 use MN\JoseQ\Courses\Domain\CourseName;
 use MN\JoseQ\Courses\Domain\CourseRepository;
+use MN\Shared\Domain\Bus\Event\EventBus;
 
 class CourseCreator
 {
 
     private $repository;
+    private $bus;
 
-    public function __construct(CourseRepository $repository)
+    public function __construct(CourseRepository $repository, EventBus $bus)
     {
         $this->repository = $repository;
+        $this->bus = $bus;
     }
 
     public function __invoke(CreateCourseRequest $request): void
     {
-        $course = new Course(new CourseId($request->id()), new CourseName($request->name()), new CourseDuration($request->duration()));
+        $id = new CourseId($request->id());
+        $name = new CourseName($request->name());
+        $duration = new CourseDuration($request->duration());
+        $course = Course::create($id, $name, $duration);
+
         $this->repository->save($course);
+        $this->bus->publish($course->pullDomainEvents());
     }
 }
