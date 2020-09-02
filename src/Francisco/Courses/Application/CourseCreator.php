@@ -12,15 +12,18 @@ use MN\Francisco\Courses\Domain\CourseDuration;
 use MN\Francisco\Courses\Domain\CourseId;
 use MN\Francisco\Courses\Domain\CourseName;
 use MN\Francisco\Courses\Domain\CourseRepository;
+use MN\Shared\Domain\Bus\Event\EventBus;
 
 final class CourseCreator
 {
 
     private $repository;
+    private $bus;
 
-    public function __construct(CourseRepository $repository)
+    public function __construct(CourseRepository $repository, EventBus $bus)
     {
         $this->repository = $repository;
+        $this->bus = $bus;
     }
 
     public function __invoke(CreateCourseRequest $request): void
@@ -28,5 +31,6 @@ final class CourseCreator
         $course = new Course(new CourseId($request->id()), new CourseName($request->name()), new CourseDuration($request->duration()));
 
         $this->repository->save($course);
+        $this->bus->publish($course->pullDomainEvents());
     }
 }
