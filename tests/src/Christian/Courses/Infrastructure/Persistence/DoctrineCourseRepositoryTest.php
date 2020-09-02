@@ -20,7 +20,7 @@ final class DoctrineCourseRepositoryTest extends CoursesModuleInfrastructureTest
         $course = CourseMother::random();
         $this->repository()->save($course);
     }
-    
+
     /**
      * @test
      */
