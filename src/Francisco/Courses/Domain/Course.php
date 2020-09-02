@@ -26,7 +26,7 @@ final class Course extends AggregateRoot
     {
         $course = new self($id, $name, $duration);
 
-        $course->record(new CourseCreatedDomainEvent($id->value(), $name->value(), $duration->value()));
+        //$course->record(new CourseCreatedDomainEvent($id->value(), $name->value(), $duration->value()));
 
         return $course;
     }

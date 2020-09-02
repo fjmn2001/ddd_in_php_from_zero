@@ -9,6 +9,7 @@ namespace MN\Tests\Francisco\Courses\Application;
 
 use MN\Francisco\Courses\Application\CourseCreator;
 use MN\Francisco\Courses\Application\CreateCourseRequest;
+use MN\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus;
 use MN\Tests\Francisco\Courses\CoursesModuleUnitTestCase;
 use MN\Tests\Francisco\Courses\Domain\CourseMother;
 
@@ -16,10 +17,10 @@ final class CourseCreatorTest extends CoursesModuleUnitTestCase
 {
     private $creator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
-        $this->creator = new CourseCreator($this->repository());
+        $this->creator = new CourseCreator($this->repository(), $this->eventBus());
     }
 
     /**
