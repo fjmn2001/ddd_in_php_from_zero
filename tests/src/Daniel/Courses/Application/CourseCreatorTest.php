@@ -6,15 +6,19 @@ declare(strict_types=1);
 namespace MN\Tests\Daniel\Courses\Application;
 
 
+use MN\Daniel\Courses\Application\CourseCreator;
 use MN\Daniel\Courses\Application\CreateCourseRequest;
 use MN\Tests\Daniel\Courses\CourseModuleUnitCaseTest;
 use MN\Tests\Daniel\Courses\Domain\CourseMother;
 
 final class CourseCreatorTest extends CourseModuleUnitCaseTest
 {
-    protected function setUp()
+    private $creator;
+
+    protected function setUp(): void
     {
         parent::setUp();
+        $this->creator = new CourseCreator($this->repository(), $this->eventBus());
     }
 
     /**
