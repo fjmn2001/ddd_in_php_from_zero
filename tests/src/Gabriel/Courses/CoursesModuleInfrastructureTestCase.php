@@ -12,7 +12,7 @@ use MN\Tests\Gabriel\Shared\Infrastructure\PhpUnit\GabrielContextInfrastructureT
 
 abstract class CoursesModuleInfrastructureTestCase extends GabrielContextInfrastructureTestCase
 {
-    protected function repository(): CourseRepository
+    protected function repositoyy(): CourseRepository
     {
         return $this->service(CourseRepository::class);
     }
