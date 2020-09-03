@@ -11,6 +11,7 @@ use MN\Francisco\Courses\Application\CourseCreator;
 use MN\Francisco\Courses\Application\CreateCourseRequest;
 use MN\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus;
 use MN\Tests\Francisco\Courses\CoursesModuleUnitTestCase;
+use MN\Tests\Francisco\Courses\Domain\CourseCreatedDomainEventMother;
 use MN\Tests\Francisco\Courses\Domain\CourseMother;
 
 final class CourseCreatorTest extends CoursesModuleUnitTestCase
@@ -30,7 +31,10 @@ final class CourseCreatorTest extends CoursesModuleUnitTestCase
     public function it_should_create_a_valid_course(): void
     {
         $course = CourseMother::random();
+        $domainEvent = CourseCreatedDomainEventMother::fromCourse($course);
+
         $this->shouldSave($course);
+        $this->shouldPublishDomainEvent($domainEvent);
 
         $this->creator->__invoke(new CreateCourseRequest(
             $course->id()->value(),
