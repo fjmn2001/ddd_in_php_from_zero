@@ -30,7 +30,7 @@ class Course extends AggregateRoot
     public static function create(CourseId $id, CourseName $name, CourseDuration $duration): self
     {
         $course = new self($id, $name, $duration);
-        $course->record(new CourseCreatedDomainEvent($id->value(), $name->value(), $duration->value()));
+//        $course->record(new CourseCreatedDomainEvent($id->value(), $name->value(), $duration->value()));
         return $course;
     }
 

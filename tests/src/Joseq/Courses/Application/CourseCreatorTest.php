@@ -11,15 +11,19 @@ namespace MN\Tests\Joseq\Courses\Application;
 
 use MN\JoseQ\Courses\Application\CourseCreator;
 use MN\JoseQ\Courses\Application\CreateCourseRequest;
+use MN\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus;
 use MN\Tests\Joseq\Courses\CoursesModuleUnitTestCase;
 use MN\Tests\Joseq\Courses\Domain\CourseMother;
 
 
 class CourseCreatorTest extends CoursesModuleUnitTestCase
 {
-    protected function setUp()
+    private $creator;
+
+    protected function setUp(): void
     {
         parent::setUp();
+        $this->creator = new CourseCreator($this->repository(), $this->eventBus());
     }
 
     /**
@@ -30,7 +34,7 @@ class CourseCreatorTest extends CoursesModuleUnitTestCase
         $course = CourseMother::random();
         $this->shouldSave($course);
 
-        $this->courseCreator()->__invoke(new CreateCourseRequest(
+        $this->creator->__invoke(new CreateCourseRequest(
             $course->id()->value(),
             $course->name()->value(),
             $course->duration()->value()

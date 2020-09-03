@@ -36,6 +36,7 @@ class CourseCreator
         $course = Course::create($id, $name, $duration);
 
         $this->repository->save($course);
-        $this->bus->publish($course->pullDomainEvents());
+
+        $this->bus->publish(...$course->pullDomainEvents());
     }
 }
