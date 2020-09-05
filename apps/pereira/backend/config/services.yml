@@ -22,7 +22,7 @@ services:
   MN\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus:
     arguments: [ !tagged mn.domain_event_subscriber ]
     lazy: true
-    
+
   MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
     tags:
       - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
