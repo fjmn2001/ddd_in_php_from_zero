@@ -1,12 +1,13 @@
 <?php
 
+
 declare(strict_types=1);
 
 
 namespace MN\Daniel\Courses\Domain;
 
 
-use MN\Shared\Domain\Bus\Event\DomainEvent\AggregateRoot;
+use MN\Shared\Domain\Aggregate\AggregateRoot;
 
 final class Course extends AggregateRoot
 {
