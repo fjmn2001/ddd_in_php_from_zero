@@ -12,7 +12,7 @@ use MN\Tests\Daniel\Courses\Domain\CourseMother;
 
 final class CourseCreatorTest extends CourseModuleUnitCaseTest
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
     }

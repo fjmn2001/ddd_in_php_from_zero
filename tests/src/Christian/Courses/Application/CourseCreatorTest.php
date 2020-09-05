@@ -16,7 +16,7 @@ final class CourseCreatorTest extends CoursesModuleUnitTestCase
 {
     private $creator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->creator = new CourseCreator($this->repository());
