@@ -19,9 +19,9 @@ final class CourseCreator
     private $repository;
     private $bus;
 
-    public function __construct(CourseRepository $respository , EventBus $bus)
+    public function __construct(CourseRepository $repository, EventBus $bus)
     {
-        $this->repository =$respository;
+        $this->repository = $repository;
         $this->bus = $bus;
     }
 
@@ -34,6 +34,6 @@ final class CourseCreator
         $course = Course::create($id, $name, $duration);
 
         $this->repository->save($course);
-        //$this->bus->publish($course->pullDomainEvents());
+        //$this->bus->publish(...$course->pullDomainEvents());
     }
 }

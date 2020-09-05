@@ -37,7 +37,6 @@ final class CourseCreatorTest extends CoursesModuleUnitTestCase
             $course->duration()->value()
         ));
 
-        $this->repository->save($course);
     }
 
 }
