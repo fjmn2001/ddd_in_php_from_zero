@@ -9,6 +9,7 @@ namespace MN\Tests\Christian\Courses\Application;
 
 use MN\Christian\Courses\Application\CourseCreator;
 use MN\Christian\Courses\Application\CreateCourseRequest;
+use MN\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus;
 use MN\Tests\Christian\Courses\CoursesModuleUnitTestCase;
 use MN\Tests\Christian\Courses\Domain\CourseMother;
 
@@ -16,10 +17,10 @@ final class CourseCreatorTest extends CoursesModuleUnitTestCase
 {
     private $creator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
-        $this->creator = new CourseCreator($this->repository());
+        $this->creator = new CourseCreator($this->repository(), $this->eventBus());
     }
 
     /**
