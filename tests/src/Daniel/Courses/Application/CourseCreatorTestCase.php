@@ -8,10 +8,11 @@ namespace MN\Tests\Daniel\Courses\Application;
 
 use MN\Daniel\Courses\Application\CourseCreator;
 use MN\Daniel\Courses\Application\CreateCourseRequest;
-use MN\Tests\Daniel\Courses\CourseModuleUnitCaseTest;
+use MN\Tests\Daniel\Courses\CourseModuleUnitTestCase;
 use MN\Tests\Daniel\Courses\Domain\CourseMother;
+use MN\Tests\Daniel\Domain\CourseCreatedDomainEventMother;
 
-final class CourseCreatorTest extends CourseModuleUnitCaseTest
+final class CourseCreatorTestCase extends CourseModuleUnitTestCase
 {
     private $creator;
 
@@ -27,9 +28,12 @@ final class CourseCreatorTest extends CourseModuleUnitCaseTest
     public function it_should_create_a_valid_course(): void
     {
         $course = CourseMother::random();
-        $this->shouldSave($course);
+        $domainEvent = CourseCreatedDomainEventMother::fromCourse($course);
 
-        $this->creator()->__invoke(new CreateCourseRequest(
+        $this->shouldSave($course);
+        $this->shouldPublishDomainEvent($domainEvent);
+
+        $this->creator->__invoke(new CreateCourseRequest(
             $course->id()->value(),
             $course->name()->value(),
             $course->duration()->value()

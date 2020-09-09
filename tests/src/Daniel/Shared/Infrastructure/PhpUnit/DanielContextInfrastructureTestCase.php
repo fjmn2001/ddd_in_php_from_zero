@@ -19,7 +19,7 @@ abstract class DanielContextInfrastructureTestCase extends InfrastructureTestCas
         $arranger->arrange();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $arranger = new DanielEnvironmentArranger($this->service(EntityManager::class));
         $arranger->close();
