@@ -17,9 +17,12 @@ use MN\Tests\Joseq\Courses\Domain\CourseMother;
 
 class CourseCreatorTest extends CoursesModuleUnitTestCase
 {
+    private $creator;
+
     protected function setUp(): void
     {
         parent::setUp();
+        $this->creator = new CourseCreator($this->repository(), $this->eventBus());
     }
 
     /**
@@ -30,7 +33,7 @@ class CourseCreatorTest extends CoursesModuleUnitTestCase
         $course = CourseMother::random();
         $this->shouldSave($course);
 
-        $this->courseCreator()->__invoke(new CreateCourseRequest(
+        $this->creator->__invoke(new CreateCourseRequest(
             $course->id()->value(),
             $course->name()->value(),
             $course->duration()->value()
