@@ -9,7 +9,7 @@
 namespace MN\JoseQ\Courses\Domain;
 
 
-use MN\Shared\Domain\Bus\Event\DomainEvent\AggregateRoot;
+use MN\Shared\Domain\Aggregate\AggregateRoot;
 
 class Course extends AggregateRoot
 {
@@ -25,6 +25,13 @@ class Course extends AggregateRoot
         $this->name = $name;
         $this->duration = $duration;
 
+    }
+
+    public static function create(CourseId $id, CourseName $name, CourseDuration $duration): self
+    {
+        $course = new self($id, $name, $duration);
+//        $course->record(new CourseCreatedDomainEvent($id->value(), $name->value(), $duration->value()));
+        return $course;
     }
 
     public function id(): CourseId
