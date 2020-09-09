@@ -25,7 +25,7 @@ final class Utils
 
     public static function dateToString(DateTimeInterface $date): string
     {
-        return $date->format(defined('DateTimeInterface::ATOM') ? DateTimeInterface::ATOM : 'Y-m-d\TH:i:sP');
+        return $date->format(DateTimeInterface::ATOM);
     }
 
     public static function stringToDate(string $date): DateTimeImmutable
