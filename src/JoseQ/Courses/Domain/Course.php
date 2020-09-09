@@ -9,7 +9,7 @@
 namespace MN\JoseQ\Courses\Domain;
 
 
-use MN\Shared\Domain\Bus\Event\DomainEvent\AggregateRoot;
+use MN\Shared\Domain\Aggregate\AggregateRoot;
 
 class Course extends AggregateRoot
 {

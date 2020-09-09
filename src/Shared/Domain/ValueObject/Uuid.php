@@ -30,6 +30,11 @@ class Uuid
         return new self(RamseyUuid::uuid4()->toString());
     }
 
+    public function equals(Uuid $other): bool
+    {
+        return $this->value() === $other->value();
+    }
+
     private function ensureIsValidUuid(string $value): void
     {
         if(!RamseyUuid::isValid($value)){

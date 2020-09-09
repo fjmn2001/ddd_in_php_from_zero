@@ -8,8 +8,9 @@ namespace MN\Tests\Shared\Infrastructure\Mockery;
 
 
 use MN\Tests\Shared\Infrastructure\PhpUnit\Constraint\MNConstraintIsSimilar;
+use Mockery\Matcher\MatcherAbstract;
 
-final class MNMatcherIsSimilar
+final class MNMatcherIsSimilar extends MatcherAbstract
 {
     private $constraint;
 
