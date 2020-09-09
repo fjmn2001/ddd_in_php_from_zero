@@ -6,7 +6,7 @@ declare(strict_types=1);
 namespace MN\Gabriel\CoursesCounter\Infrastructure\Persistence;
 
 
-use MN\Gabriel\Courses\Domain\CourseRepository;
+
 use MN\Gabriel\CoursesCounter\Domain\CoursesCounter;
 use MN\Gabriel\CoursesCounter\Domain\CoursesCounterRepository;
 use MN\Shared\Infrastructure\Persistence\Doctrine\DoctrineRepository;
