@@ -16,6 +16,10 @@ use MN\Shared\Domain\UuidGenerator;
 
 final class CoursesCounterIncrementer
 {
+    private $repository;
+    private $uuidGenerator;
+    private $bus;
+
     public function __construct(
         CoursesCounterRepository $repository,
         UuidGenerator $uuidGenerator,
