@@ -11,7 +11,6 @@ namespace MN\Tests\Joseq\Courses\Application;
 
 use MN\JoseQ\Courses\Application\CourseCreator;
 use MN\JoseQ\Courses\Application\CreateCourseRequest;
-use MN\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus;
 use MN\Tests\Joseq\Courses\CoursesModuleUnitTestCase;
 use MN\Tests\Joseq\Courses\Domain\CourseMother;
 
