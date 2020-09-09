@@ -7,6 +7,10 @@ services:
     autowire: true
 
   # Configure
+  _instanceof:
+    MN\Shared\Domain\Bus\Event\DomainEventSubscriber:
+      tags: [ 'mn.domain_event_subscriber' ]
+
   MN\Apps\JoseQ\Backend\Controller\:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']
