@@ -6,42 +6,39 @@ declare(strict_types=1);
 namespace MN\Tests\Joseq\Courses;
 
 
-use MN\JoseQ\Courses\Application\CourseCreator;
 use MN\JoseQ\Courses\Domain\Course;
+use MN\JoseQ\Courses\Domain\CourseId;
 use MN\JoseQ\Courses\Domain\CourseRepository;
-use MN\Shared\Domain\Bus\Event\EventBus;
 use MN\Tests\Shared\Infrastructure\PhpUnit\UnitTestCase;
-use Mockery;
 use Mockery\MockInterface;
-use PHPUnit\Framework\MockObject\MockObject;
 
 abstract class CoursesModuleUnitTestCase extends UnitTestCase
 {
-    private $repository;
-    private $eventBus;
+    protected $repository;
 
-    public function shouldSave(Course $course): void
+    protected function shouldSave(Course $course): void
     {
-        $this->repository()->method('save')->with($course);
+        $this->repository()
+            ->shouldReceive('save')
+            ->with($this->similarTo($course))
+            ->once()
+            ->andReturnNull();
     }
 
-    protected function eventBus(): MockInterface
+    protected function shouldSearch(CourseId $id, ?Course $course): void
     {
-        return $this->eventBus = $this->eventBus ?: $this->mock(EventBus::class);
+        $this->repository()
+            ->shouldReceive('search')
+            ->with($this->similarTo($id))
+            ->once()
+            ->andReturn($course);
     }
 
-    protected function mock(string $className): MockInterface
+    /**
+     * @return CourseRepository|MockInterface
+     */
+    protected function repository(): MockInterface
     {
-        return Mockery::mock($className);
-    }
-
-    protected function repository(): MockObject
-    {
-        return $this->repository = $this->repository ?: $this->createMock(CourseRepository::class);
-    }
-
-    protected function creator() : CourseCreator
-    {
-        return new CourseCreator($this->repository());
+        return $this->repository = $this->repository ?: $this->mock(CourseRepository::class);
     }
 }
