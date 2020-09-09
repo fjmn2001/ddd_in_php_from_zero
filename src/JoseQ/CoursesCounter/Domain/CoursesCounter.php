@@ -1,0 +1,66 @@
+<?php
+
+declare(strict_types=1);
+
+
+namespace MN\JoseQ\CoursesCounter\Domain;
+
+
+use MN\JoseQ\Courses\Domain\CourseId;
+use MN\Shared\Domain\Aggregate\AggregateRoot;
+
+final class CoursesCounter extends AggregateRoot
+{
+    private $id;
+    private $total;
+    private $existingCourses;
+
+    public function __construct(CoursesCounterId $id, CoursesCounterTotal $total, CourseId ...$existingCourses)
+    {
+        $this->id = $id;
+        $this->total = $total;
+        $this->existingCourses = $existingCourses;
+    }
+
+    public static function initialize(CoursesCounterId $id): self
+    {
+        return new self($id, CoursesCounterTotal::initialize());
+    }
+
+    public function id(): CoursesCounterId
+    {
+        return $this->id;
+    }
+
+    public function total(): CoursesCounterTotal
+    {
+        return $this->total;
+    }
+
+    public function existingCourses(): array
+    {
+        return $this->existingCourses;
+    }
+
+    public function increment(CourseId $courseId): void
+    {
+        $this->total = $this->total->increment();
+        $this->existingCourses[] = $courseId;
+
+        $this->record(new CoursesCounterIncrementedDomainEvent($this->id()->value(), $this->total()->value()));
+    }
+
+    public function hasIncremented(CourseId $courseId): bool
+    {
+        $existingCourse = search($this->courseIdComparator($courseId), $this->existingCourses());
+
+        return null !== $existingCourse;
+    }
+
+    private function courseIdComparator(CourseId $courseId): callable
+    {
+        return static function (CourseId $other) use ($courseId) {
+            return $courseId->equals($other);
+        };
+    }
+}
