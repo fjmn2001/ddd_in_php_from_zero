@@ -18,6 +18,7 @@ abstract class CourseModuleInfrastrutureTestCase extends GibmyxContextInfrastruc
     {
         return $this->service(CourseRepository::class);
     }
+
     protected function doctrineRepositoyy(): CourseRepository
     {
         return new DoctrineCourseRepository($this->service(EntityManager::class));
