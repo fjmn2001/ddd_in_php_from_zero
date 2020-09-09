@@ -8,6 +8,7 @@ namespace MN\Tests\Gabriel\Courses;
 
 
 use MN\Gabriel\Courses\Domain\Course;
+use MN\Gabriel\Courses\Domain\CourseId;
 use MN\Gabriel\Courses\Domain\CourseRepository;
 use MN\Shared\Domain\Bus\Event\EventBus;
 use Mockery;
@@ -17,31 +18,31 @@ use PHPUnit\Framework\TestCase;
 
 abstract class CoursesModuleUnitTestCase extends TestCase
 {
-
     protected $repository;
-    private $eventBus;
-
-    /**
-     * @return CourseRepository|\PHPUnit\Framework\MockObject\MockObject
-     */
-    protected function repository(): MockObject
-    {
-        return $this->repository = $this->repository ?: $this->createMock(CourseRepository::class);
-    }
-
-    /** @return EventBus|MockInterface */
-    protected function eventBus(): MockInterface
-    {
-        return $this->eventBus = $this->eventBus ?: $this->mock(EventBus::class);
-    }
-
-    protected function mock(string $className): MockInterface
-    {
-        return Mockery::mock($className);
-    }
 
     protected function shouldSave(Course $course): void
     {
-        $this->repository()->method('save')->with($course);
+        $this->repository()
+            ->shouldReceive('save')
+            ->with($this->similarTo($course))
+            ->once()
+            ->andReturnNull();
+    }
+
+    protected function shouldSearch(CourseId $id, ?Course $course): void
+    {
+        $this->repository()
+            ->shouldReceive('search')
+            ->with($this->similarTo($id))
+            ->once()
+            ->andReturn($course);
+    }
+
+    /**
+     * @return CourseRepository|MockInterface
+     */
+    protected function repository(): MockInterface
+    {
+        return $this->repository = $this->repository ?: $this->mock(CourseRepository::class);
     }
 }
