@@ -7,8 +7,6 @@ declare(strict_types=1);
 namespace MN\Tests\Gibmyx\Courses\Infrastructure\Persistence;
 
 
-use MN\Gibmyx\Courses\Domain\CourseId;
-use MN\Gibmyx\Courses\Infrastructure\FileCourseRepository;
 use MN\Tests\Gibmyx\Courses\CourseModuleInfrastrutureTestCase;
 use MN\Tests\Gibmyx\Courses\Domain\CourseMother;
 

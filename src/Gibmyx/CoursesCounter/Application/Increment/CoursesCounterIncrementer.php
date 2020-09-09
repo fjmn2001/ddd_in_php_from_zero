@@ -6,7 +6,7 @@ declare(strict_types=1);
 namespace MN\Gibmyx\CoursesCounter\Application\Increment;
 
 
-use MN\Francisco\CoursesCounter\Domain\CoursesCounterRepository;
+use MN\Gibmyx\CoursesCounter\Domain\CoursesCounterRepository;
 use MN\Gibmyx\Courses\Domain\CourseId;
 use MN\Gibmyx\CoursesCounter\Domain\CoursesCounter;
 use MN\Gibmyx\CoursesCounter\Domain\CoursesCounterId;

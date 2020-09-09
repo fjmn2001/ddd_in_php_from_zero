@@ -31,10 +31,10 @@ class CourseCreator
         $id = new CourseId($request->id());
         $name = new CourseName($request->name());
         $duration = new CourseDuration($request->duration());
-
-        $course = new Course ($id, $name, $duration);
+        $course = Course::create($id, $name, $duration);
 
         $this->reposirtory->save($course);
-//        $this->bus->publish(...$course->pullDomainEvents());
+
+        $this->bus->publish(...$course->pullDomainEvents());
     }
 }
