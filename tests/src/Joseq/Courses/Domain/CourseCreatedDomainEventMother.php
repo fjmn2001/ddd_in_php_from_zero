@@ -8,6 +8,7 @@ namespace MN\Tests\Joseq\Courses\Domain;
 
 
 use MN\JoseQ\Courses\Domain\Course;
+use MN\JoseQ\Courses\Domain\CourseCreatedDomainEvent;
 use MN\JoseQ\Courses\Domain\CourseDuration;
 use MN\JoseQ\Courses\Domain\CourseId;
 use MN\JoseQ\Courses\Domain\CourseName;
