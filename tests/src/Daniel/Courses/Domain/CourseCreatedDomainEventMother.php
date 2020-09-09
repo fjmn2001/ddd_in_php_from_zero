@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace MN\Tests\Daniel\Domain;
+namespace MN\Tests\Daniel\Courses\Domain;
 
 
 use MN\Daniel\Courses\Domain\Course;
@@ -11,9 +11,7 @@ use MN\Daniel\Courses\Domain\CourseCreatedDomainEvent;
 use MN\Daniel\Courses\Domain\CourseDuration;
 use MN\Daniel\Courses\Domain\CourseId;
 use MN\Daniel\Courses\Domain\CourseName;
-use MN\Tests\Daniel\Courses\Domain\CourseDurationMother;
-use MN\Tests\Daniel\Courses\Domain\CourseIdMother;
-use MN\Tests\Daniel\Courses\Domain\CourseNameMother;
+
 
 final class CourseCreatedDomainEventMother
 {

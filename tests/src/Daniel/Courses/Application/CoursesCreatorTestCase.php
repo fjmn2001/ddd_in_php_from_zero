@@ -8,11 +8,12 @@ namespace MN\Tests\Daniel\Courses\Application;
 
 use MN\Daniel\Courses\Application\CourseCreator;
 use MN\Daniel\Courses\Application\CreateCourseRequest;
-use MN\Tests\Daniel\Courses\CourseModuleUnitTestCase;
+use MN\Tests\Daniel\Courses\CoursesModuleUnitTestCase;
+use MN\Tests\Daniel\Courses\Domain\CourseCreatedDomainEventMother;
 use MN\Tests\Daniel\Courses\Domain\CourseMother;
-use MN\Tests\Daniel\Domain\CourseCreatedDomainEventMother;
 
-final class CourseCreatorTestCase extends CourseModuleUnitTestCase
+
+final class CoursesCreatorTestCase extends CoursesModuleUnitTestCase
 {
     private $creator;
 

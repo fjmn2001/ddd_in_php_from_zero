@@ -12,7 +12,7 @@ use MN\Daniel\Courses\Domain\CourseRepository;
 use MN\Tests\Shared\Infrastructure\PhpUnit\UnitTestCase;
 use Mockery\MockInterface;
 
-abstract class CourseModuleUnitTestCase extends UnitTestCase
+abstract class CoursesModuleUnitTestCase extends UnitTestCase
 {
     protected $repository;
 
