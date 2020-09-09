@@ -10,12 +10,12 @@ use MN\JoseQ\Courses\Application\CourseCreator;
 use MN\JoseQ\Courses\Domain\Course;
 use MN\JoseQ\Courses\Domain\CourseRepository;
 use MN\Shared\Domain\Bus\Event\EventBus;
+use MN\Tests\Shared\Infrastructure\PhpUnit\UnitTestCase;
 use Mockery;
 use Mockery\MockInterface;
 use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 
-abstract class CoursesModuleUnitTestCase extends TestCase
+abstract class CoursesModuleUnitTestCase extends UnitTestCase
 {
     private $repository;
     private $eventBus;
