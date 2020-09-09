@@ -7,6 +7,10 @@ services:
     autowire: true
 
   # Configure
+  _instanceof:
+    MN\Share\Domain\Bus\Event\DomainEventSubcriber:
+      tags: [ 'mn.domain_event_subscriber' ]
+
   MN\Apps\Gabriel\Backend\Controller\:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']

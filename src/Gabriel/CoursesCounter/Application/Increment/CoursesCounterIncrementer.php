@@ -7,23 +7,29 @@ declare(strict_types=1);
 namespace MN\Gabriel\CoursesCounter\Application\Increment;
 
 
-use Doctrine\ORM\Id\UuidGenerator;
+
 use MN\Gabriel\Courses\Domain\CourseId;
 use MN\Gabriel\CoursesCounter\Domain\CoursesCounter;
 use MN\Gabriel\CoursesCounter\Domain\CoursesCounterId;
 use MN\Gabriel\CoursesCounter\Domain\CoursesCounterRepository;
 use MN\Shared\Domain\Bus\Event\EventBus;
+use MN\Shared\Domain\UuidGenerator;
 
 final class CoursesCounterIncrementer
 {
+    private $repository;
+    private $uuidGenerator;
+    private $bus;
+
     public function __construct(
         CoursesCounterRepository $repository,
         UuidGenerator $uuidGenerator,
         EventBus $bus
     ) {
-        $this->repository    = $repository;
+
+        $this->repository = $repository;
         $this->uuidGenerator = $uuidGenerator;
-        $this->bus           = $bus;
+        $this->bus = $bus;
     }
 
     public function __invoke(CourseId $courseId): void
