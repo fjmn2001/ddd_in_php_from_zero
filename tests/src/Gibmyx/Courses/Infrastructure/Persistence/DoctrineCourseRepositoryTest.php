@@ -18,6 +18,6 @@ final class DoctrineCourseRepositoryTest extends CourseModuleInfrastrutureTestCa
     public function try_it_should_save_a_course()
     {
         $course = CourseMother::random();
-        $this->repositoyy()->save($course);
+        $this->doctrineRepository()->save($course);
     }
 }

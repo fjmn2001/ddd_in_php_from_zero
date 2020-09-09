@@ -17,7 +17,7 @@ use MN\Tests\Joseq\Courses\Domain\CourseMother;
 
 class CourseCreatorTest extends CoursesModuleUnitTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
     }

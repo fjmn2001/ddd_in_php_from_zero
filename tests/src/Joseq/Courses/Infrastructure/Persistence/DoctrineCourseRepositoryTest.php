@@ -1,16 +1,15 @@
 <?php
 
-
 declare(strict_types=1);
 
 
-namespace MN\Tests\Christian\Courses\Infrastructure\Persistence;
+namespace MN\Tests\Joseq\Courses\Infrastructure\Persistence;
 
 
-use MN\Tests\Christian\Courses\Domain\CourseMother;
-use MN\Tests\Christian\Courses\CoursesModuleInfrastructureTestCase;
+use MN\Tests\Joseq\Courses\CourseModuleInfrastructureTestCase;
+use MN\Tests\Joseq\Courses\Domain\CourseMother;
 
-final class DoctrineCourseRepositoryTest extends CoursesModuleInfrastructureTestCase
+final class DoctrineCourseRepositoryTest extends CourseModuleInfrastructureTestCase
 {
     /**
      * @test
@@ -21,22 +20,20 @@ final class DoctrineCourseRepositoryTest extends CoursesModuleInfrastructureTest
         $this->doctrineRepository()->save($course);
         $this->clearUnitOfWork();
     }
-
     /**
      * @test
      */
-    public function it_should_return_a_existing_course(): void
+    public function it_should_return_an_existing_course(): void
     {
         $course = CourseMother::random();
         $this->doctrineRepository()->save($course);
-        $this->assertEquals($course, $this->repository()->search($course->id()));
+        $this->assertEquals($course, $this->doctrineRepository()->search($course->id()));
         $this->clearUnitOfWork();
     }
-
     /**
      * @test
      */
-    public function it_should_not_return_a_existing_course(): void
+    public function it_should__not_return_an_existing_course(): void
     {
         $course = CourseMother::random();
         $this->assertNull($this->doctrineRepository()->search($course->id()));
