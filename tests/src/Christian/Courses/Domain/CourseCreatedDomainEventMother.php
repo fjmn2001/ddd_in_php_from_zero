@@ -4,14 +4,14 @@
 declare(strict_types=1);
 
 
-namespace MN\Tests\Joseq\Courses\Domain;
+namespace MN\Tests\Christian\Courses\Domain;
 
 
-use MN\JoseQ\Courses\Domain\Course;
-use MN\JoseQ\Courses\Domain\CourseCreatedDomainEvent;
-use MN\JoseQ\Courses\Domain\CourseDuration;
-use MN\JoseQ\Courses\Domain\CourseId;
-use MN\JoseQ\Courses\Domain\CourseName;
+use MN\Christian\Courses\Domain\Course;
+use MN\Christian\Courses\Domain\CourseCreatedDomainEvent;
+use MN\Christian\Courses\Domain\CourseDuration;
+use MN\Christian\Courses\Domain\CourseId;
+use MN\Christian\Courses\Domain\CourseName;
 
 final class CourseCreatedDomainEventMother
 {
