@@ -11,4 +11,4 @@ services:
 
   # Instance selector
   MN\Shared\Domain\RandomNumberGenerator: '@MN\Tests\Shared\Infrastructure\ConstantRandomNumberGenerator'
-#  CodelyTv\Shared\Domain\Bus\Event\EventBus: '@CodelyTv\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus'
+  # MN\Shared\Domain\Bus\Event\EventBus: '@MN\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus'

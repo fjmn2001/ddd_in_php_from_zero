@@ -9,7 +9,7 @@ namespace MN\Shared\Infrastructure\Persistence\Doctrine;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
-use MN\Shared\Domain\Bus\Event\DomainEvent\AggregateRoot;
+use MN\Shared\Domain\Aggregate\AggregateRoot;
 
 abstract class DoctrineRepository
 {
