@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace MN\Francisco\CoursesCounter\Infrastructure\Persistence\Doctrine;
+namespace MN\Gibmyx\CoursesCounter\Infrastructure\Persistence\Doctrine;
 
 
 use MN\Shared\Infrastructure\Persistence\Doctrine\UuidType;

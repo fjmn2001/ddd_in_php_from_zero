@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace MN\Francisco\CoursesCounter\Infrastructure\Persistence;
+namespace MN\Gibmyx\CoursesCounter\Infrastructure\Persistence;
 
 
 use MN\Gibmyx\CoursesCounter\Domain\CoursesCounter;
