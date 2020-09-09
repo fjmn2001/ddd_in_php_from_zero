@@ -7,7 +7,12 @@ declare(strict_types=1);
 namespace MN\Francisco\CoursesCounter\Application\Increment;
 
 
+use MN\Francisco\Courses\Domain\CourseId;
+use MN\Francisco\CoursesCounter\Domain\CoursesCounter;
+use MN\Francisco\CoursesCounter\Domain\CoursesCounterId;
 use MN\Francisco\CoursesCounter\Domain\CoursesCounterRepository;
+use MN\Shared\Domain\Bus\Event\EventBus;
+use MN\Shared\Domain\UuidGenerator;
 
 final class CoursesCounterIncrementer
 {
@@ -15,10 +20,11 @@ final class CoursesCounterIncrementer
         CoursesCounterRepository $repository,
         UuidGenerator $uuidGenerator,
         EventBus $bus
-    ) {
-        $this->repository    = $repository;
+    )
+    {
+        $this->repository = $repository;
         $this->uuidGenerator = $uuidGenerator;
-        $this->bus           = $bus;
+        $this->bus = $bus;
     }
 
     public function __invoke(CourseId $courseId): void

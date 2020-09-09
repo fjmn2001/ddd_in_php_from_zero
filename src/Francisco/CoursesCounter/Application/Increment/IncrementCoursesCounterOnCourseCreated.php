@@ -7,7 +7,10 @@ declare(strict_types=1);
 namespace MN\Francisco\CoursesCounter\Application\Increment;
 
 
+use MN\Francisco\Courses\Domain\CourseCreatedDomainEvent;
+use MN\Francisco\Courses\Domain\CourseId;
 use MN\Shared\Domain\Bus\Event\DomainEventSubscriber;
+use function Lambdish\Phunctional\apply;
 
 final class IncrementCoursesCounterOnCourseCreated implements DomainEventSubscriber
 {
