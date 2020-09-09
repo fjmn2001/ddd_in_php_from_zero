@@ -10,13 +10,10 @@ namespace MN\Tests\Gabriel\Courses;
 use MN\Gabriel\Courses\Domain\Course;
 use MN\Gabriel\Courses\Domain\CourseId;
 use MN\Gabriel\Courses\Domain\CourseRepository;
-use MN\Shared\Domain\Bus\Event\EventBus;
-use Mockery;
+use MN\Tests\Shared\Infrastructure\PhpUnit\UnitTestCase;
 use Mockery\MockInterface;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 
-abstract class CoursesModuleUnitTestCase extends TestCase
+abstract class CoursesModuleUnitTestCase extends UnitTestCase
 {
     protected $repository;
 
