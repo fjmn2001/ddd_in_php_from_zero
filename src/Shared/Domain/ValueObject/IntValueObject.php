@@ -9,7 +9,7 @@ namespace MN\Shared\Domain\ValueObject;
 
 abstract class IntValueObject
 {
-    private $value;
+    protected $value;
 
     public function __construct(int $value)
     {
