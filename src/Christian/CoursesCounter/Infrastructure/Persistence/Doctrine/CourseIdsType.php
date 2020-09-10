@@ -8,8 +8,9 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\JsonType;
 use MN\Christian\Courses\Domain\CourseId;
 use MN\Shared\Infrastructure\Persistence\Doctrine\Dbal\DoctrineCustomType;
+use function Lambdish\Phunctional\map;
 
- final class CourseIdsType extends JsonType implements DoctrineCustomType
+final class CourseIdsType extends JsonType implements DoctrineCustomType
 {
     public static function customTypeName(): string
     {
