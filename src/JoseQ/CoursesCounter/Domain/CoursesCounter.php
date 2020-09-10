@@ -8,6 +8,7 @@ namespace MN\JoseQ\CoursesCounter\Domain;
 
 use MN\JoseQ\Courses\Domain\CourseId;
 use MN\Shared\Domain\Aggregate\AggregateRoot;
+use function Lambdish\Phunctional\search;
 
 final class CoursesCounter extends AggregateRoot
 {

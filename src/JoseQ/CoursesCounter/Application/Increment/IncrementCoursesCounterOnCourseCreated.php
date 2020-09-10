@@ -8,9 +8,10 @@ namespace MN\JoseQ\CoursesCounter\Application\Increment;
 
 use MN\JoseQ\Courses\Domain\CourseCreatedDomainEvent;
 use MN\JoseQ\Courses\Domain\CourseId;
+use MN\Shared\Domain\Bus\Event\DomainEventSubscriber;
 use function Lambdish\Phunctional\apply;
 
-final class IncrementCoursesCounterOnCourseCreated
+final class IncrementCoursesCounterOnCourseCreated implements DomainEventSubscriber
 {
     private $incrementer;
 
