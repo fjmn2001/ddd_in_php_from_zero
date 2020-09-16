@@ -13,7 +13,7 @@ use MN\Tests\Daniel\Courses\Domain\CourseCreatedDomainEventMother;
 use MN\Tests\Daniel\Courses\Domain\CourseMother;
 
 
-final class CoursesCreatorTestCase extends CoursesModuleUnitTestCase
+final class CoursesCreatorTest extends CoursesModuleUnitTestCase
 {
     private $creator;
 
