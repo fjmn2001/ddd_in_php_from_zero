@@ -35,6 +35,7 @@ final class CourseIdsType extends JsonType implements DoctrineCustomType
 
     public function convertToPHPValue($value, AbstractPlatform $platform)
     {
+        dd($value);
         return parent::convertToPHPValue(map(function (string $value) {
             return new CourseId($value);
         }, $value), $platform);
