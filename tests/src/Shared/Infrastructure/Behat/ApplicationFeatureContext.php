@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Shared\Infrastructure\Behat;
+namespace MN\Tests\Shared\Infrastructure\Behat;
 
 
 use Behat\Behat\Context\Context;
