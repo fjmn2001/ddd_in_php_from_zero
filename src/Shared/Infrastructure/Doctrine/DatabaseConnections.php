@@ -11,7 +11,7 @@ use function Lambdish\Phunctional\each;
 
 class DatabaseConnections
 {
-    private array $connections;
+    private $connections;
 
     public function __construct(iterable $connections)
     {
