@@ -19,11 +19,11 @@ francisco_backend:
     courses:
       paths: [ tests/apps/francisco/backend/features/courses ]
       contexts:
-        - Shared\Infrastructure\Behat\ApplicationFeatureContext
+        - MN\Tests\Shared\Infrastructure\Behat\ApplicationFeatureContext
         - MN\Tests\Shared\Infrastructure\Behat\ApiContext
 
     courses_counter:
       paths: [ tests/apps/francisco/backend/features/courses_counter ]
       contexts:
-        - Shared\Infrastructure\Behat\ApplicationFeatureContext
+        - MN\Tests\Shared\Infrastructure\Behat\ApplicationFeatureContext
         - MN\Tests\Shared\Infrastructure\Behat\ApiContext
