@@ -10,7 +10,6 @@ use MN\Shared\Domain\Aggregate\AggregateRoot;
 
 final class Course extends AggregateRoot
 {
-
     private $id;
     private $name;
     private $duration;
@@ -20,6 +19,15 @@ final class Course extends AggregateRoot
         $this->id = $id;
         $this->name = $name;
         $this->duration = $duration;
+    }
+
+    public static function create(CourseId $id, CourseName $name, CourseDuration $duration): self
+    {
+        $course = new static($id, $name, $duration);
+
+        $course->record(new CourseCreatedDomainEvent($id->value(), $name->value(), $duration->value()));
+
+        return $course;
     }
 
     public function id(): CourseId

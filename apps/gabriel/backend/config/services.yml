@@ -1,13 +1,16 @@
 imports:
   - { resource: ../../../../src/Gabriel/Shared/Infrastructure/Symfony/DependencyInjection/gabriel_services.yml }
 
-
 services:
   _defaults:
     autoconfigure: true
     autowire: true
 
   # Configure
+  _instanceof:
+    MN\Shared\Domain\Bus\Event\DomainEventSubscriber:
+      tags: [ 'mn.domain_event_subscriber' ]
+
   MN\Apps\Gabriel\Backend\Controller\:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']
