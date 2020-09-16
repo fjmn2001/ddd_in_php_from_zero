@@ -18,7 +18,6 @@ final class ApiContext extends RawMinkContext
     private $sessionHelper;
     private $minkSession;
     private $request;
-    private $deserializer;
 
     public function __construct(Session $minkSession)
     {
@@ -33,16 +32,6 @@ final class ApiContext extends RawMinkContext
     public function iSendARequestTo($method, $url): void
     {
         $this->request->sendRequest($method, $this->locatePath($url));
-    }
-
-    /**
-     * @Given /^I send an event to the event bus:$/
-     */
-    public function iSendAnEventToTheEventBus(PyStringNode $event)
-    {
-        $domainEvent = $this->deserializer->deserialize($event->getRaw());
-
-        $this->bus->publish($domainEvent);
     }
 
     /**
