@@ -36,3 +36,11 @@ services:
   MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
     tags:
       - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+  # -- APP DEFINITIONS --
+  # Command/Query Handlers
+  MN\Shared\Infrastructure\Bus\Command\InMemorySymfonyCommandBus:
+    arguments: [ !tagged mn.command_handler ]
+
+  MN\Shared\Infrastructure\Bus\Query\InMemorySymfonyQueryBus:
+    arguments: [ !tagged mn.query_handler ]
