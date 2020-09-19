@@ -3,6 +3,7 @@
 
 declare(strict_types=1);
 
+use MN\Apps\Francisco\Backend\FranciscoBackendKernel;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\ErrorHandler\Debug;
@@ -37,3 +38,7 @@ if ($_SERVER['APP_DEBUG']) {
         Debug::enable();
     }
 }
+
+$kernel = new FranciscoBackendKernel($_SERVER['APP_ENV'], (bool)$_SERVER['APP_DEBUG']);
+$application = new Application($kernel);
+$application->run($input);
