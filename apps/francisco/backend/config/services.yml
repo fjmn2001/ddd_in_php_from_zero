@@ -48,3 +48,6 @@ services:
 
   MN\Shared\Infrastructure\Bus\Query\InMemorySymfonyQueryBus:
     arguments: [ !tagged mn.query_handler ]
+
+  # -- IMPLEMENTATIONS SELECTOR --
+  MN\Shared\Domain\Bus\Event\EventBus: '@MN\Shared\Infrastructure\Bus\Event\MySql\MySqlDoctrineEventBus'
