@@ -14,12 +14,12 @@ use MN\Tests\Gibmyx\Shared\Infrastructure\PhpUnit\GibmyxContextInfrastructureTes
 
 abstract class CoursesModuleInfrastructureTestCase extends GibmyxContextInfrastructureTestCase
 {
-    protected function repositoyy(): CourseRepository
+    protected function repository(): CourseRepository
     {
         return $this->service(CourseRepository::class);
     }
 
-    protected function doctrineRepositoyy(): CourseRepository
+    protected function doctrineRepository(): CourseRepository
     {
         return new DoctrineCourseRepository($this->service(EntityManager::class));
     }

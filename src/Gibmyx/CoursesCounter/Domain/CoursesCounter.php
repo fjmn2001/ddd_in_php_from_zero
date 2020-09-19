@@ -7,7 +7,7 @@ declare(strict_types=1);
 namespace MN\Gibmyx\CoursesCounter\Domain;
 
 
-use MN\Francisco\Courses\Domain\CourseId;
+use MN\Gibmyx\Courses\Domain\CourseId;
 use MN\Shared\Domain\Aggregate\AggregateRoot;
 use function Lambdish\Phunctional\search;
 
