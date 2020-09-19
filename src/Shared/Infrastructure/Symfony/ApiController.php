@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace MN\Shared\Infrastructure\Symfony;
 
+use MN\Shared\Domain\Bus\Command\Command;
+use MN\Shared\Domain\Bus\Command\CommandBus;
 use MN\Shared\Domain\Bus\Query\Query;
 use MN\Shared\Domain\Bus\Query\QueryBus;
 use MN\Shared\Domain\Bus\Query\Response;
