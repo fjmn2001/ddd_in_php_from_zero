@@ -6,12 +6,12 @@ declare(strict_types=1);
 namespace MN\Gibmyx\CoursesCounter\Application\Increment;
 
 
-use MN\Gibmyx\CoursesCounter\Domain\CoursesCounterRepository;
+use MN\Shared\Domain\UuidGenerator;
 use MN\Gibmyx\Courses\Domain\CourseId;
+use MN\Shared\Domain\Bus\Event\EventBus;
 use MN\Gibmyx\CoursesCounter\Domain\CoursesCounter;
 use MN\Gibmyx\CoursesCounter\Domain\CoursesCounterId;
-use MN\Shared\Domain\Bus\Event\EventBus;
-use MN\Shared\Domain\UuidGenerator;
+use MN\Gibmyx\CoursesCounter\Domain\CoursesCounterRepository;
 
 class CoursesCounterIncrementer
 {
