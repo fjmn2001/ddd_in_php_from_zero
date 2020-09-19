@@ -1,4 +1,4 @@
-PUT http://localhost:8092/courses/ff49c630-d16b-4d6d-a701-cd641d67a9c8
+PUT http://localhost:8092/courses/{{$uuid}}
 Content-Type: application/json
 
 {
