@@ -4,9 +4,10 @@
 namespace MN\Apps\Francisco\Backend\Controller\CoursesCounter;
 
 
+use MN\Shared\Infrastructure\Symfony\ApiController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class CoursesCounterGetController
+class CoursesCounterGetController extends ApiController
 {
     public function __invoke()
     {
