@@ -11,9 +11,17 @@ services:
     MN\Shared\Domain\Bus\Event\DomainEventSubscriber:
       tags: [ 'mn.domain_event_subscriber' ]
 
+    MN\Shared\Domain\Bus\Query\QueryHandler:
+      tags: [ 'mn.query_handler' ]
+
+  # Controllers
   MN\Apps\Francisco\Backend\Controller\:
     resource: '../src/Controller'
     tags: [ 'controller.service_arguments' ]
+
+  MN\Apps\Francisco\Backend\Command\:
+    resource: '../src/Command'
+    tags: [ 'console.command' ]
 
   # Wire
   MN\Shared\:
@@ -27,6 +35,26 @@ services:
     arguments: [ !tagged mn.domain_event_subscriber ]
     lazy: true
 
+  MN\Shared\Infrastructure\Bus\Event\DomainEventMapping:
+    arguments: [ !tagged mn.domain_event_subscriber ]
+
+  MN\Shared\Infrastructure\Bus\Event\DomainEventSubscriberLocator:
+    arguments: [ !tagged mn.domain_event_subscriber ]
+
+  MN\Shared\Infrastructure\Doctrine\DatabaseConnections:
+    arguments: [ !tagged mn.database_connection ]
+
   MN\Shared\Infrastructure\Symfony\AddJsonBodyToRequestListener:
     tags:
       - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+  # -- APP DEFINITIONS --
+  # Command/Query Handlers
+  MN\Shared\Infrastructure\Bus\Command\InMemorySymfonyCommandBus:
+    arguments: [ !tagged mn.command_handler ]
+
+  MN\Shared\Infrastructure\Bus\Query\InMemorySymfonyQueryBus:
+    arguments: [ !tagged mn.query_handler ]
+
+  # -- IMPLEMENTATIONS SELECTOR --
+  MN\Shared\Domain\Bus\Event\EventBus: '@MN\Shared\Infrastructure\Bus\Event\MySql\MySqlDoctrineEventBus'
