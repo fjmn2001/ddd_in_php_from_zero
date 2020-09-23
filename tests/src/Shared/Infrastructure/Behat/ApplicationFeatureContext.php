@@ -17,12 +17,12 @@ class ApplicationFeatureContext implements Context
     private $deserializer;
 
     public function __construct(
-        //DatabaseConnections $connections,
+        DatabaseConnections $connections,
         InMemorySymfonyEventBus $bus,
         DomainEventJsonDeserializer $deserializer
     )
     {
-        //$this->connections = $connections;
+        $this->connections = $connections;
         $this->bus = $bus;
         $this->deserializer = $deserializer;
     }
@@ -30,8 +30,8 @@ class ApplicationFeatureContext implements Context
     /** @BeforeScenario */
     public function cleanEnvironment(): void
     {
-//        $this->connections->clear();
-//        $this->connections->truncate();
+        $this->connections->clear();
+        $this->connections->truncate();
     }
 
     /**

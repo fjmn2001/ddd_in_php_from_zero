@@ -1,4 +1,4 @@
-courses_put:
+courses_counter_get:
   path: /courses-counter
   controller: MN\Apps\Francisco\Backend\Controller\CoursesCounter\CoursesCounterGetController
   methods:  [GET]
