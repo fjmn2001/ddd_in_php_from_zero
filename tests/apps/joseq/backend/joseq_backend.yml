@@ -20,8 +20,10 @@ joseq_backend:
       paths: [ tests/apps/joseq/backend/features/courses ]
       contexts:
         - MN\Tests\Shared\Infrastructure\Behat\ApplicationFeatureContext
+        - MN\Tests\Shared\Infrastructure\Behat\ApiContext
 
     courses_counter:
       paths: [ tests/apps/joseq/backend/features/courses_counter ]
       contexts:
         - MN\Tests\Shared\Infrastructure\Behat\ApplicationFeatureContext
+        - MN\Tests\Shared\Infrastructure\Behat\ApiContext
