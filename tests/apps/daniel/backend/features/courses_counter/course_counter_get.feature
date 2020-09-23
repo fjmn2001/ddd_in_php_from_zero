@@ -1,10 +1,10 @@
 Feature: Obtain the total number of courses
-  In order to have a courses counter
+  In order to have a course counter
   As a user
   I want to see the courses counter
 
   Scenario: With one course
-    Given I send an event to the event bus:
+    Given I send an event to the event bus
     """
     {
       "data": {
@@ -22,7 +22,7 @@ Feature: Obtain the total number of courses
       }
     }
     """
-    When I send a "GET" request to "/courses-counter"
+    When I send a GET request to "/courses-counter"
     Then the response status code should be 200
     And the response content should be:
     """

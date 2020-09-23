@@ -1,0 +1,4 @@
+courses_counter_get:
+  path: /courses-counter
+  controller: MN\Apps\Gibmyx\Backend\Controller\CoursesCounter\CoursesCounterGetController
+  methods:  [GET]
