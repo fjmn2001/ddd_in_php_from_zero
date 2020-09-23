@@ -1,0 +1,9 @@
+PUT http://localhost:8092/courses/{{$uuid}}
+Content-Type: application/json
+
+{
+  "name": "The best course",
+  "duration": "5 hours"
+}
+
+###

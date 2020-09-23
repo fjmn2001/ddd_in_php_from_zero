@@ -20,7 +20,7 @@ class DomainEventMapping
     public function for(string $name)
     {
         if (!isset($this->mapping[$name])) {
-            throw new \RuntimeException("The Domain Event Class for <$name> doesn't exists or have no subscribers");
+            throw new DomainEventClassNotExist($name);
         }
 
         return $this->mapping[$name];
