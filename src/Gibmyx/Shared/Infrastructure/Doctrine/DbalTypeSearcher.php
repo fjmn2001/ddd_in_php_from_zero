@@ -1,5 +1,6 @@
 <?php
 
+
 declare(strict_types=1);
 
 
@@ -18,7 +19,7 @@ final class DbalTypeSearcher
     public static function inPath(string $path, string $contextName): array
     {
         $possibleDbalDirectories = self::possibleDbalPaths($path);
-        $dbalDirectories         = filter(self::isExistingDbalPath(), $possibleDbalDirectories);
+        $dbalDirectories = filter(self::isExistingDbalPath(), $possibleDbalDirectories);
 
         return reduce(self::dbalClassesSearcher($contextName), $dbalDirectories, []);
     }
@@ -63,7 +64,7 @@ final class DbalTypeSearcher
     {
         return static function (array $totalNamespaces, string $path) use ($contextName) {
             $possibleFiles = scandir($path);
-            $files         = filter(
+            $files = filter(
                 static function ($file) {
                     return Utils::endsWith('Type.php', $file);
                 },
@@ -72,7 +73,7 @@ final class DbalTypeSearcher
 
             $namespaces = map(
                 static function (string $file) use ($path, $contextName) {
-                    $fullPath     = "$path/$file";
+                    $fullPath = "$path/$file";
                     $splittedPath = explode("/src/$contextName/", $fullPath);
 
                     $classWithoutPrefix = str_replace(['.php', '/'], ['', '\\'], $splittedPath[1]);

@@ -12,9 +12,9 @@ use MN\Gibmyx\Courses\Domain\CourseRepository;
 use MN\Gibmyx\Courses\Infrastructure\Persistence\DoctrineCourseRepository;
 use MN\Tests\Gibmyx\Shared\Infrastructure\PhpUnit\GibmyxContextInfrastructureTestCase;
 
-abstract class CourseModuleInfrastrutureTestCase extends GibmyxContextInfrastructureTestCase
+abstract class CoursesModuleInfrastructureTestCase extends GibmyxContextInfrastructureTestCase
 {
-    protected function repositoyy(): CourseRepository
+    protected function repository(): CourseRepository
     {
         return $this->service(CourseRepository::class);
     }
