@@ -20,3 +20,8 @@ daniel_backend:
       paths: [ tests/apps/daniel/backend/features/courses ]
       contexts:
         - MN\Tests\Shared\Infrastructure\Behat\ApiContext
+
+    courses_counter:
+      paths: [ tests/apps/daniel/backend/features/courses_counter ]
+      contexts:
+        - MN\Tests\Shared\Infrastructure\Behat\ApiContext
