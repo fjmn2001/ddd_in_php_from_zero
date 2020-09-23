@@ -12,14 +12,18 @@ namespace MN\Tests\Joseq\Courses\Application;
 use MN\JoseQ\Courses\Application\CourseCreator;
 use MN\JoseQ\Courses\Application\CreateCourseRequest;
 use MN\Tests\Joseq\Courses\CoursesModuleUnitTestCase;
+use MN\Tests\Joseq\Courses\Domain\CourseCreatedDomainEventMother;
 use MN\Tests\Joseq\Courses\Domain\CourseMother;
 
 
 class CourseCreatorTest extends CoursesModuleUnitTestCase
 {
+    private $creator;
+
     protected function setUp(): void
     {
         parent::setUp();
+        $this->creator = new CourseCreator($this->repository(), $this->eventBus());
     }
 
     /**
@@ -28,9 +32,12 @@ class CourseCreatorTest extends CoursesModuleUnitTestCase
     public function it_should_create_a_valid_course(): void
     {
         $course = CourseMother::random();
-        $this->shouldSave($course);
+        $domainEvent = CourseCreatedDomainEventMother::fromCourse($course);
 
-        $this->courseCreator()->__invoke(new CreateCourseRequest(
+        $this->shouldSave($course);
+        $this->shouldPublishDomainEvent($domainEvent);
+
+        $this->creator->__invoke(new CreateCourseRequest(
             $course->id()->value(),
             $course->name()->value(),
             $course->duration()->value()

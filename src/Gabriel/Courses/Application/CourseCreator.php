@@ -1,5 +1,6 @@
 <?php
 
+
 declare(strict_types=1);
 
 
@@ -11,20 +12,29 @@ use MN\Gabriel\Courses\Domain\CourseId;
 use MN\Gabriel\Courses\Domain\CourseName;
 use MN\Gabriel\Courses\Domain\CourseRepository;
 use MN\Gabriel\Courses\Domain\Course;
+use MN\Shared\Domain\Bus\Event\EventBus;
 
-class CourseCreator
+final class CourseCreator
 {
 
     private $repository;
+    private $bus;
 
-    public function __construct(CourseRepository $respository)
+    public function __construct(CourseRepository $repository, EventBus $bus)
     {
-        $this->repository =$respository;
+        $this->repository = $repository;
+        $this->bus = $bus;
     }
+
     public function __invoke(CreateCourseRequest $request): void
     {
-        $course = new Course(new CourseId($request->id()), new CourseName($request->name()), new CourseDuration($request->duration()));
+        $id = new CourseId($request->id());
+        $name = new CourseName($request->name());
+        $duration = new CourseDuration($request->duration());
+
+        $course = Course::create($id, $name, $duration);
 
         $this->repository->save($course);
+        $this->bus->publish(...$course->pullDomainEvents());
     }
 }
