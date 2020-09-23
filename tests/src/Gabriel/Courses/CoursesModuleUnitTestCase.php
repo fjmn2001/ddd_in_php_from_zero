@@ -8,25 +8,38 @@ namespace MN\Tests\Gabriel\Courses;
 
 
 use MN\Gabriel\Courses\Domain\Course;
+use MN\Gabriel\Courses\Domain\CourseId;
 use MN\Gabriel\Courses\Domain\CourseRepository;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
+use MN\Tests\Shared\Infrastructure\PhpUnit\UnitTestCase;
+use Mockery\MockInterface;
 
-abstract class CoursesModuleUnitTestCase extends TestCase
+abstract class CoursesModuleUnitTestCase extends UnitTestCase
 {
-
     protected $repository;
-
-    /**
-     * @return CourseRepository|\PHPUnit\Framework\MockObject\MockObject
-     */
-    protected function repository(): MockObject
-    {
-        return $this->repository = $this->repository ?: $this->createMock(CourseRepository::class);
-    }
 
     protected function shouldSave(Course $course): void
     {
-        $this->repository()->method('save')->with($course);
+        $this->repository()
+            ->shouldReceive('save')
+            ->with($this->similarTo($course))
+            ->once()
+            ->andReturnNull();
+    }
+
+    protected function shouldSearch(CourseId $id, ?Course $course): void
+    {
+        $this->repository()
+            ->shouldReceive('search')
+            ->with($this->similarTo($id))
+            ->once()
+            ->andReturn($course);
+    }
+
+    /**
+     * @return CourseRepository|MockInterface
+     */
+    protected function repository(): MockInterface
+    {
+        return $this->repository = $this->repository ?: $this->mock(CourseRepository::class);
     }
 }
