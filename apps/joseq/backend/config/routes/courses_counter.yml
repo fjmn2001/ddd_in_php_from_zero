@@ -1,0 +1,4 @@
+courses_counter_get:
+  path: /courses-counter
+  controller: MN\Apps\joseq\Backend\Controller\CoursesCounter\CoursesCounterGetController
+  methods:  [GET]
