@@ -16,7 +16,7 @@ final class CourseIdMother
         return new CourseId($value);
     }
 
-    public function creator(): callable
+    public static function creator(): callable
     {
         return static function () {
             return self::random();
