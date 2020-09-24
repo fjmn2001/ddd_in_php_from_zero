@@ -17,7 +17,7 @@ services:
   # Controllers
   MN\Apps\JoseQ\Backend\Controller\:
     resource: '../src/Controller'
-    tags: ['controller.service_arguments']
+    tags: [ 'controller.service_arguments' ]
 
   MN\Apps\JoseQ\Backend\Command\:
     resource: '../src/Command'
