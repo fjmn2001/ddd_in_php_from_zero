@@ -9,18 +9,19 @@ namespace MN\Tests\Francisco\Courses\Application;
 
 use MN\Francisco\Courses\Application\CourseCreator;
 use MN\Francisco\Courses\Application\CreateCourseCommand;
+use MN\Francisco\Courses\Application\CreateCourseCommandHandler;
 use MN\Tests\Francisco\Courses\CoursesModuleUnitTestCase;
 use MN\Tests\Francisco\Courses\Domain\CourseCreatedDomainEventMother;
 use MN\Tests\Francisco\Courses\Domain\CourseMother;
 
-final class CourseCreatorTest extends CoursesModuleUnitTestCase
+final class CourseCreatorCommandHandlerTest extends CoursesModuleUnitTestCase
 {
-    private $creator;
+    private $handler;
 
     protected function setUp(): void
     {
         parent::setUp();
-        $this->creator = new CourseCreator($this->repository(), $this->eventBus());
+        $this->handler = new CreateCourseCommandHandler(new CourseCreator($this->repository(), $this->eventBus()));
     }
 
     /**
@@ -34,7 +35,7 @@ final class CourseCreatorTest extends CoursesModuleUnitTestCase
         $this->shouldSave($course);
         $this->shouldPublishDomainEvent($domainEvent);
 
-        $this->creator->__invoke(new CreateCourseCommand(
+        $this->handler->__invoke(new CreateCourseCommand(
             $course->id()->value(),
             $course->name()->value(),
             $course->duration()->value()
