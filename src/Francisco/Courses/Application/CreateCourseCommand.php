@@ -7,7 +7,9 @@ declare(strict_types=1);
 namespace MN\Francisco\Courses\Application;
 
 
-final class CreateCourseRequest
+use MN\Shared\Domain\Bus\Command\Command;
+
+final class CreateCourseCommand implements Command
 {
     private $id;
     private $name;

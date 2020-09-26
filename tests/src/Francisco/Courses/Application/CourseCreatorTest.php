@@ -8,7 +8,7 @@ namespace MN\Tests\Francisco\Courses\Application;
 
 
 use MN\Francisco\Courses\Application\CourseCreator;
-use MN\Francisco\Courses\Application\CreateCourseRequest;
+use MN\Francisco\Courses\Application\CreateCourseCommand;
 use MN\Tests\Francisco\Courses\CoursesModuleUnitTestCase;
 use MN\Tests\Francisco\Courses\Domain\CourseCreatedDomainEventMother;
 use MN\Tests\Francisco\Courses\Domain\CourseMother;
@@ -34,7 +34,7 @@ final class CourseCreatorTest extends CoursesModuleUnitTestCase
         $this->shouldSave($course);
         $this->shouldPublishDomainEvent($domainEvent);
 
-        $this->creator->__invoke(new CreateCourseRequest(
+        $this->creator->__invoke(new CreateCourseCommand(
             $course->id()->value(),
             $course->name()->value(),
             $course->duration()->value()
