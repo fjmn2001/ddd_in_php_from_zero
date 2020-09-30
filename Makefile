@@ -17,6 +17,9 @@ start-local-christian:
 start-local-francisco:
 	php -S localhost:8092 apps/francisco/backend/public/index.php
 
+run-consumers-francisco:
+	php apps/francisco/backend/bin/console.php mn:domain-events:mysql:consume 200
+
 start-local-gabriel:
 	php -S localhost:8092 apps/gabriel/backend/public/index.php
 

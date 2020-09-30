@@ -18,7 +18,7 @@ final class GibmyxEntityManagerFactory
         $isDevMode = 'prod' !== $enveronment;
 
         $prefixes = array_merge(
-          DoctrunePrefixsSearcher::inPath(__DIR__ . '/../../../../Gibmyx', 'MN\Gibmyx')
+            DoctrinePrefixesSearcher::inPath(__DIR__ . '/../../../../Gibmyx', 'MN\Gibmyx')
         );
 
         $dbalCustomTypesClasses = DbalTypeSearcher::inPath(__DIR__ . '/../../../../Gibmyx', 'Gibmyx');
