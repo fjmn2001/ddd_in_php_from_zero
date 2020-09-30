@@ -11,9 +11,17 @@ services:
     MN\Shared\Domain\Bus\Event\DomainEventSubscriber:
       tags: [ 'mn.domain_event_subscriber' ]
 
+    MN\Shared\Domain\Bus\Query\QueryHandler:
+      tags: [ 'mn.query_handler' ]
+
+  # Controllers
   MN\Apps\Daniel\Backend\Controller\:
     resource: '../src/Controller'
-    tags: ['controller.service_arguments']
+    tags: [ 'controller.service_arguments' ]
+
+  MN\Apps\Daniel\Backend\Command\:
+    resource: '../src/Command'
+    tags: [ 'console.command' ]
 
   # Wire
   MN\Shared\:

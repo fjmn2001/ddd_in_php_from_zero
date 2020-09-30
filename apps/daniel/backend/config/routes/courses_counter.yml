@@ -1,0 +1,4 @@
+courses_counter_get:
+  path: /courses-counter
+  controller: MN\Apps\Daniel\Backend\Controller\CoursesCounter\CoursesCounterGetController
+  methods:  [GET]
