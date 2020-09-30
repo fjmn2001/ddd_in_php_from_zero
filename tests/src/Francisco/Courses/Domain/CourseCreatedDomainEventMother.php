@@ -20,7 +20,7 @@ final class CourseCreatedDomainEventMother
         return new CourseCreatedDomainEvent($id->value(), $name->value(), $duration->value());
     }
 
-    public static function fromCourse(Course $course): CourseCreatedDomainEvent
+    public static function fromCommand(Course $course): CourseCreatedDomainEvent
     {
         return self::create($course->id(), $course->name(), $course->duration());
     }
