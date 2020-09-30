@@ -8,6 +8,7 @@ namespace MN\Apps\Daniel\Backend\Controller\Courses;
 
 
 
+use MN\Daniel\Courses\Application\CreateCourseCommand;
 use MN\Shared\Infrastructure\Symfony\ApiController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
