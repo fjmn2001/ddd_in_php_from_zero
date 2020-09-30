@@ -12,8 +12,6 @@ use function Lambdish\Phunctional\apply;
 
 final class JoseQEnvironmentArranger
 {
-
-
     private $entityManager;
 
     public function __construct(EntityManager $entityManager)
@@ -23,6 +21,7 @@ final class JoseQEnvironmentArranger
 
     public function arrange(): void
     {
+        dd($this->entityManager);
         apply(new MySqlDatabaseCleaner(), [$this->entityManager]);
     }
 

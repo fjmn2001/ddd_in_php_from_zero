@@ -11,6 +11,9 @@ services:
     MN\Shared\Domain\Bus\Event\DomainEventSubscriber:
       tags: [ 'mn.domain_event_subscriber' ]
 
+    MN\Shared\Domain\Bus\Command\CommandHandler:
+      tags: [ 'mn.command_handler' ]
+
     MN\Shared\Domain\Bus\Query\QueryHandler:
       tags: [ 'mn.query_handler' ]
 
