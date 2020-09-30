@@ -14,9 +14,14 @@ services:
     MN\Shared\Domain\Bus\Query\QueryHandler:
       tags: [ 'mn.query_handler' ]
 
+  # Controllers
   MN\Apps\Gibmyx\Backend\Controller\:
     resource: '../src/Controller'
     tags: ['controller.service_arguments']
+
+  MN\Apps\Gibmyx\Backend\Command\:
+    resource: '../src/Command'
+    tags: [ 'console.command' ]
 
   # Wire
   MN\Shared\:
@@ -33,6 +38,9 @@ services:
   MN\Shared\Infrastructure\Bus\Event\DomainEventMapping:
     arguments: [ !tagged mn.domain_event_subscriber ]
 
+  MN\Shared\Infrastructure\Bus\Event\DomainEventSubscriberLocator:
+    arguments: [ !tagged mn.domain_event_subscriber ]
+
   MN\Shared\Infrastructure\Doctrine\DatabaseConnections:
     arguments: [ !tagged mn.database_connection ]
 
@@ -47,3 +55,6 @@ services:
 
   MN\Shared\Infrastructure\Bus\Query\InMemorySymfonyQueryBus:
     arguments: [ !tagged mn.query_handler ]
+
+  # -- IMPLEMENTATIONS SELECTOR --
+  MN\Shared\Domain\Bus\Event\EventBus: '@MN\Shared\Infrastructure\Bus\Event\MySql\MySqlDoctrineEventBus'
